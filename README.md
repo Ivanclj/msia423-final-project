@@ -57,12 +57,14 @@ Display of trends in customer retentions as the app is being used for a continuo
  - Story 1: Document current retention rate and recalculate customer retention each trial/quarter/year as new customers are added through the app on a continuous basis. The bank might have a certain goal as to what percentage of customers it wants to retain each year. If that is not met, then the bank has to evaluate its product, customer service, or marketing campaigns to increase retention.
 
 ### Backlog
-1. Theme.epic1.story1:
-2. Theme.epic1.story2:
+1. Theme.epic1.story1: - PLANNED
+2. Theme.epic1.story2: - PLANNED
 3. Theme.epic1.story3:
-4. Theme.epic2.story1
-5.
-6.
+4. Theme.epic2.story1:
+5. Theme.epic2.story2:
+6. Theme.epic2.story3:
+7. Theme.epic2.story4:
+8. Theme.epic3.story1 (8 points):
 
 ### Icebox
 1. Transit from Local to AWS and develop the App.
@@ -198,5 +200,5 @@ Run `pytest` from the command line in the main project repository.
 
 Tests exist in `test/test_helpers.py`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjQ1MzE3MjAsLTEwOTEyNTEwOF19
+eyJoaXN0b3J5IjpbNDc3MTM3OTYsLTEwOTEyNTEwOF19
 -->
