@@ -65,7 +65,7 @@ Display of trends in customer retentions as the app is being used for a continuo
 	 - Will break this icebox down as become more familiar with AWS and App development.
 2. Update the customer information as the same not-churned customer is recorded into the app. As updated customer information will impact prediction result, a new model needs to be implemented based on updated information each month/quarter/year.
 	 - Time Estimation: 8 points
-3.  Look at the distribution of churn probability among customers. Instead of using a threshold of 0.5, adjust threshold to get different 
+3.  Look at the distribution of churn probability among customers. Instead of using a threshold of 0.5, adjust threshold based on the bank's target, which will result in different retention rates and different proportion of active customers.
 	 - Time Estimation: 8 points
 4. Visualize customer retention over time and investigate characteristics of exited customers.
 	 - Time Estimation: 8 points since a large time interval required to see trends.
@@ -195,5 +195,5 @@ Run `pytest` from the command line in the main project repository.
 
 Tests exist in `test/test_helpers.py`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4NzQ1NjA2LDE2ODI4MjAwMjddfQ==
+eyJoaXN0b3J5IjpbMTQyOTcxNjUwNV19
 -->
