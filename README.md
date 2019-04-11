@@ -37,8 +37,8 @@ Display of trends in customer retentions as the app is being used for a continuo
 
 **Epic 1**: Explore existing customers to study their behaviors related to churn.
  - Story 1: Understand overall distribution of attributes across all customers. 
- - Story 2: Display distribution of different attributes across churn and no churn groups to see if there is a differentiated pattern. For example, churned customers might have less accounts in this bank. The bank will then be able to look for patterns in other customers and come up with plans to retain old customers or attract new customers elsewhere.
- - Story 3: Other exploratory analysis based on demographic groups such as country, gender, age to explore if a specific group is loyal customer to this bank and develop strategy to drive further customer engagement.
+ - Story 2: Display distribution of different attributes across churn and no churn groups to see if there is a differentiated pattern. For example, churned customers might have less accounts in this bank. The bank will then be able to look for these patterns in other customers not in the sample and come up with plans to retain old customers or attract new customers elsewhere.
+ - Story 3: Other exploratory analysis based on demographic groups such as country, gender, age to explore if a specific group is loyal customer to this bank and develop strategy to drive further customer engagement. For example, maybe customers from German are less likely to churn. This might be due to the bank's unique marketing strategy
 
 **Epic 2**: Predict whether a customer with obtained demographic and account information in 2019 will churn or not.
  - Story 1: Use a crude model to select most important features from all attributes that help predict the likelihood of churn.
@@ -193,5 +193,5 @@ Run `pytest` from the command line in the main project repository.
 
 Tests exist in `test/test_helpers.py`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4ODQxODU1MSwxNjgyODIwMDI3XX0=
+eyJoaXN0b3J5IjpbMjA1ODM5NzI4OSwxNjgyODIwMDI3XX0=
 -->
