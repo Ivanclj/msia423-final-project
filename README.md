@@ -53,10 +53,10 @@ Display of trends in customer retentions as the app is being used for a continuo
 1. Theme.epic1.story1 (2 points): - PLANNED
 2. Theme.epic1.story2 (2 points): - PLANNED
 3. Theme.epic1.story3 (2 points)
-4. Theme.epic2.story1 (1 p:
-5. Theme.epic2.story2:
-6. Theme.epic2.story3:
-7. Theme.epic2.story4:
+4. Theme.epic2.story1 (1 point)
+5. Theme.epic2.story2 (4 points)
+6. Theme.epic2.story3 (4 points)
+7. Theme.epic2.story4 (4 points)
 8. Theme.epic3.story1: Deployment (8 points)
 
 ### Icebox
@@ -193,6 +193,6 @@ Run `pytest` from the command line in the main project repository.
 
 Tests exist in `test/test_helpers.py`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzQ3NDQ3NTAsNDc3MTM3OTYsLTEwOT
-EyNTEwOF19
+eyJoaXN0b3J5IjpbLTg1MjYzNTMxOSw0NzcxMzc5NiwtMTA5MT
+I1MTA4XX0=
 -->
