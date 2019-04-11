@@ -37,34 +37,27 @@ Display of trends in customer retentions as the app is being used for a continuo
 
 **Epic 1**: Explore existing customers to study their behaviors related to churn.
  - Story 1: Understand overall distribution of attributes across all customers. 
-	 - Time Estimation: 2 points
  - Story 2: Display distribution of different attributes across churn and no churn groups to see if there is a differentiated pattern. The bank will then be able to look for patterns in other customers and come up with plans to retain old customers or attract new customers elsewhere.
-	 - Time Estimation: 2 points 
  - Story 3: Other exploratory analysis based on demographic groups such as country, gender, age to explore if a specific group is loyal customer to this bank and develop strategy to drive further customer engagement.
-	 - Time Estimation: 2 points
 
 **Epic 2**: Predict whether a customer with obtained demographic and account information in 2019 will churn or not.
  - Story 1: Use a crude model to select most important features from all attributes that help predict the likelihood of churn.
-	 - Time Estimation: 1 point
  - Story 2: Model this classification problem using selected features through different model approaches.
-	 - Time Estimation: 4 points
  - Story 3: Choose optimized hyperparameters (model complexity and performance-wise) to achieve the success criteria.
-	 - Time Estimation: 4 points
  - Story 4: As new customer information being entered in the app, whether this customer will likely to churn or not churn will be predicted. Possibly compare his/her feature with others in the same group to study the possible reasons for exit.
-	 - Time Estimation: 4 points
 
 **Epic 3**: Deploy the model onto AWS and develop the churn prediction App. Keep track of customer retentions within the company as more customers are added.
  - Story 1: Document current retention rate and recalculate customer retention each trial/quarter/year as new customers are added through the app on a continuous basis. The bank might have a certain goal as to what percentage of customers it wants to retain each year. If that is not met, then the bank has to evaluate its product, customer service, or marketing campaigns to increase retention.
 
 ### Backlog
-1. Theme.epic1.story1: - PLANNED
-2. Theme.epic1.story2: - PLANNED
-3. Theme.epic1.story3:
-4. Theme.epic2.story1:
+1. Theme.epic1.story1 (2 points): - PLANNED
+2. Theme.epic1.story2 (2 points): - PLANNED
+3. Theme.epic1.story3 (2 points)
+4. Theme.epic2.story1 (1 p:
 5. Theme.epic2.story2:
 6. Theme.epic2.story3:
 7. Theme.epic2.story4:
-8. Theme.epic3.story1 (8 points):
+8. Theme.epic3.story1: Deployment (8 points)
 
 ### Icebox
 1. Transit from Local to AWS and develop the App.
@@ -200,5 +193,6 @@ Run `pytest` from the command line in the main project repository.
 
 Tests exist in `test/test_helpers.py`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc3MTM3OTYsLTEwOTEyNTEwOF19
+eyJoaXN0b3J5IjpbLTE1NzQ3NDQ3NTAsNDc3MTM3OTYsLTEwOT
+EyNTEwOF19
 -->
