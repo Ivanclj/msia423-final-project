@@ -45,6 +45,7 @@ Display of trends in customer retentions as the app is being used for a continuo
  - Story 2: Model this classification problem using selected features through different model approaches.
  - Story 3: Choose optimized hyperparameters (model complexity and performance-wise) to achieve the success criteria.
  - Story 4: As new customer information being entered in the app, whether this customer will likely to churn or not churn will be predicted. Possibly compare his/her feature with others in the same group to study the possible reasons for exit.
+ - Story 5: Look at distribution of probabilities of churn
 
 **Epic 3**: Deploy the model onto AWS and develop the churn prediction App. Keep track of customer retentions within the company as more customers are added.
  - Story 1: Document current retention rate and recalculate customer retention each trial/quarter/year as new customers are added through the app on a continuous basis. The bank might have a certain goal as to what percentage of customers it wants to retain each year. If that is not met, then the bank has to evaluate its product, customer service, or marketing campaigns to increase retention.
@@ -193,5 +194,5 @@ Run `pytest` from the command line in the main project repository.
 
 Tests exist in `test/test_helpers.py`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ0MTE1MDM3LDE2ODI4MjAwMjddfQ==
+eyJoaXN0b3J5IjpbMTAyMzQ5MTM4MSwxNjgyODIwMDI3XX0=
 -->
