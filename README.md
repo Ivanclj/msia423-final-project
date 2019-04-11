@@ -60,7 +60,7 @@ Display of trends in customer retentions as the app is being used for a continuo
 1. Theme.epic1.story1:
 2. Theme.epic1.story2:
 3. Theme.epic1.story3:
-4.
+4. Theme.epic2.story1
 5.
 6.
 
@@ -198,5 +198,5 @@ Run `pytest` from the command line in the main project repository.
 
 Tests exist in `test/test_helpers.py`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTEyNTEwOF19
+eyJoaXN0b3J5IjpbLTEzMjQ1MzE3MjAsLTEwOTEyNTEwOF19
 -->
