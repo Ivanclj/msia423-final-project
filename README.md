@@ -50,9 +50,9 @@ Display of trends in customer retentions as the app is being used for a continuo
  - Story 1: Document current retention rate and recalculate customer retention each trial/quarter/year as new customers are added through the app on a continuous basis. The bank might have a certain goal as to what percentage of customers it wants to retain each year. If that is not met, then the bank has to evaluate its product, customer service, or marketing campaigns to increase retention.
 
 ### Backlog
-1. Theme.epic1.story1 (2 points): - PLANNED
-2. Theme.epic1.story2 (2 points): - PLANNED
-3. Theme.epic1.story3 (2 points)
+1. Theme.epic1.story1: General Exploration (2 points) - PLANNED
+2. Theme.epic1.story2: Understanding Two Groups (2 points) - PLANNED
+3. Theme.epic1.story3: Demographic Group Exploration (2 points)
 4. Theme.epic2.story1: Feature Selection (1 point)
 5. Theme.epic2.story2: Model Building (4 points)
 6. Theme.epic2.story3: Hyperparameter Tuning (4 points)
@@ -193,6 +193,5 @@ Run `pytest` from the command line in the main project repository.
 
 Tests exist in `test/test_helpers.py`
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwOTQ3NDMyNyw0NzcxMzc5NiwtMTA5MT
-I1MTA4XX0=
+eyJoaXN0b3J5IjpbMTY4MjgyMDAyN119
 -->
