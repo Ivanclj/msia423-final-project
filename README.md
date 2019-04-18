@@ -23,7 +23,7 @@
 
 **Mission**: Compare demographic and account information across customers who have churned and who have not churned and use these information to predict whether or not a new customer will churn. Keeping track of this bank’s customer retention rates facilitates the study of characteristics of two groups of customers to inform targeting, improve products, and enhance customer engagement.
 
-**Success criteria**: The baseline machine learning success criteria for this classification model is a prediction accuracy over 80%, and precision and recall over 70%; will also look at AUC. The business outcome metric is the measure of customer retention (see if the retention rate is increasing and matches this bank’s goal).
+**Success criteria**: The baseline machine learning success criteria for this classification model is an AUC score of over 70%; will also look at F1-score. The business outcome metric is the measure of customer retention (see if the retention rate is increasing and matches this bank’s goal).
 
 
 ## Project Planning  
