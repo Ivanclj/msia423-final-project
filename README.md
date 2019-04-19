@@ -27,6 +27,7 @@
 
 **Success criteria**: The baseline machine learning success criteria for this classification model is an AUC score of over 70%; will also look at F1-score. The business outcome metric is the measure of customer retention (see if the retention rate is increasing and matches this bank’s goal).
 
+Data Source: https://www.kaggle.com/shrutimechlearn/churn-modelling
 
 ## Project Planning  
 
