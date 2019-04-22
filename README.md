@@ -1,4 +1,4 @@
-## Name: Tian Fu
+## Developer: Tian Fu
 ## QA: Yueying(Sharon) Zhang
 # Outline
 
