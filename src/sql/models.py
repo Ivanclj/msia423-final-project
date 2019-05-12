@@ -79,7 +79,7 @@ def create_db(args,engine=None):
     Base.metadata.create_all(engine)
     logging.info("database created")
 
-    #return engine
+    return engine
 
 
 
@@ -88,11 +88,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Create defined tables in database")
     parser.add_argument("--RDS", default="False",help="True if want to create in RDS else None")
     args = parser.parse_args()
-    create_db(args)
+    
+    engine = create_db(args)
 
     # create engine
-    engine = sql.create_engine(get_engine_string(RDS = False))
-
+    #engine = sql.create_engine(get_engine_string(RDS = False))
+    
 
     # create a db session
     Session = sessionmaker(bind=engine)  
