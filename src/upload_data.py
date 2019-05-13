@@ -6,11 +6,9 @@ Created on 5/12/19
 """
 import argparse
 import boto3
-
 s3 = boto3.client("s3")
 
 def upload_data(args):
-	"""Upload data to desired s3 bucket."""
     s3.upload_file(args.input_file_path,args.bucket_name,args.output_file_path)
 
 
