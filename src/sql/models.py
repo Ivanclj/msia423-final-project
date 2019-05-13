@@ -23,9 +23,9 @@ logger = logging.getLogger('sql_db')
 
 Base = declarative_base()
 
-class User_Prediction(Base):
+class Churn_Prediction(Base):
     """Create a data model for the database to be set up for capturing songs """
-    __tablename__ = 'user_prediction'
+    __tablename__ = 'churn_prediction'
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
     #ip = Column(String(20),nullable=True)
     age = Column(String(3), unique=False, nullable=False)
@@ -42,6 +42,7 @@ class User_Prediction(Base):
 
 
 def get_engine_string(RDS = False):
+    """Get database engine path."""
     if RDS:
         conn_type = "mysql+pymysql"
         user = os.environ.get("MYSQL_USER")
@@ -55,7 +56,7 @@ def get_engine_string(RDS = False):
         logging.debug("engine string: %s"%engine_string)
         return  engine_string
     else:
-        return 'sqlite:///user_prediction.db' # relative path
+        return 'sqlite:///churn_prediction.db' # relative path
 
 
 
@@ -99,14 +100,14 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)  
     session = Session()
 
-    use1 = User_Prediction(age="27",activeMember="1",numProducts="2",fromGermany="0",
+    use1 = Churn_Prediction(age="27",activeMember="1",numProducts="2",fromGermany="0",
         gender="1",balance="500.89",hasCrCard="1",tenure="2",predicted_score="1")
     session.add(use1)
     session.commit()
 
     logger.info("Data added")
 
-    query = "SELECT * FROM user_prediction"
+    query = "SELECT * FROM churn_prediction"
     df = pd.read_sql(query, con=engine)
     logger.info(df)
     session.close()
