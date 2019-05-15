@@ -10,7 +10,7 @@ import logging
 import pandas as pd
 
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine, Column, Integer, String, Text
+from sqlalchemy import create_engine, Column, Integer, String, Text, Float
 from sqlalchemy.ext.declarative import declarative_base
 import sqlalchemy as sql
 
@@ -28,14 +28,14 @@ class Churn_Prediction(Base):
     __tablename__ = 'churn_prediction'
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
     #ip = Column(String(20),nullable=True)
-    age = Column(String(3), unique=False, nullable=False)
-    activeMember = Column(String(1), unique=False, nullable=False)
-    numProducts = Column(String(2), unique=False, nullable=False)
-    fromGermany = Column(String(2), unique=False, nullable=False)
-    gender = Column(String(10), unique=False, nullable=False)
-    balance = Column(String(30), unique=False, nullable=False)
-    hasCrCard = Column(String(2), unique=False, nullable=False)
-    tenure = Column(String(5), unique=False, nullable=False)
+    age = Column(Integer, unique=False, nullable=False)
+    activeMember = Column(Integer, unique=False, nullable=False)
+    numProducts = Column(Integer, unique=False, nullable=False)
+    fromGermany = Column(Integer, unique=False, nullable=False)
+    gender = Column(Integer, unique=False, nullable=False)
+    balance = Column(Float, unique=False, nullable=False)
+    hasCrCard = Column(Integer, unique=False, nullable=False)
+    tenure = Column(Float, unique=False, nullable=False)
 
     predicted_score = Column(String(10), unique=False, nullable=False)
 
@@ -100,9 +100,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)  
     session = Session()
 
-    use1 = Churn_Prediction(age="27",activeMember="1",numProducts="2",fromGermany="0",
-        gender="1",balance="500.89",hasCrCard="1",tenure="2",predicted_score="1")
-    session.add(use1)
+    first_user = Churn_Prediction(age=27,activeMember=1,numProducts=2,fromGermany=0,
+        gender=1,balance=500.89,hasCrCard=1,tenure=2,predicted_score="1")
+    session.add(first_user)
     session.commit()
 
     logger.info("Data added")
