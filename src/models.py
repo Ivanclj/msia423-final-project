@@ -100,8 +100,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)  
     session = Session()
 
-    first_user = Churn_Prediction(age=27,activeMember=1,numProducts=2,fromGermany=0,
-        gender=1,balance=500.89,hasCrCard=1,tenure=2,predicted_score=0.88)
+    first_user = Churn_Prediction(age=1,activeMember=1,numProducts=1,fromGermany=1,
+        gender=1,balance=1,hasCrCard=1,tenure=1,predicted_score=0.057)
     session.add(first_user)
     session.commit()
 

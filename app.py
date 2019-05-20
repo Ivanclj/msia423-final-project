@@ -69,14 +69,14 @@ def choose_thre():
     """
 
     try:
-       # get user's choice of threshold
+       # get user's choice of threshold - returned type str
        threshold = request.form['threshold']
        # pull customers from database
-       #customers = db.session.query(Churn_Prediction).limit(app.config["MAX_ROWS_SHOW"]).all()
+       customers = db.session.query(Churn_Prediction).limit(app.config["MAX_ROWS_SHOW"]).all()
        logger.debug("customer list page accessed")
-       #return render_template('customer_list.html', customers=customers, threshold=threshold)
-       return render_template('customer_list.html', threshold=threshold)
+       return render_template('customer_list.html', customers=customers, threshold=float(threshold))
     except:
+       traceback.print_exc()
        logger.warning("Not able to display customers, error page returned")
        return render_template('error.html')
 

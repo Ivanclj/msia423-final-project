@@ -56,6 +56,9 @@
   box-shadow: 0 3px #666;
   transform: translateY(4px);
 }
+.banner-content td {
+  padding: 0 15px;
+}
 </style>
 
 
@@ -80,6 +83,7 @@
         <table>
           <thead>
             <tr>
+              <th style="padding:0 15px 0 15px;">ID</th>
               <th style="padding:0 15px 0 15px;">Age</th>
               <th style="padding:0 15px 0 15px;">Tenure</th>
               <th style="padding:0 15px 0 15px;">Balance</th>
@@ -95,6 +99,7 @@
           {% for customer in customers %}
             {% if customer.predicted_score > threshold %}
             <tr>
+              <td>{{ customer.id }}</td>
               <td>{{ customer.age }}</td>
               <td>{{ customer.tenure }}</td>
               <td>{{ customer.balance }}</td>
@@ -103,7 +108,7 @@
               <td>{{ customer.activeMember }}</td>
               <td>{{ customer.fromGermany }}</td>
               <td>{{ customer.gender }}</td>
-              <td>{{ customer.predicted_score }}</td>
+              <td>{{ '%0.3f' % customer.predicted_score | float }}</td>
             </tr>
             {% endif %}
           {% endfor %}
