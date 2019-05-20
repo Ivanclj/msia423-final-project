@@ -37,7 +37,7 @@ class Churn_Prediction(Base):
     hasCrCard = Column(Integer, unique=False, nullable=False)
     tenure = Column(Float, unique=False, nullable=False)
 
-    predicted_score = Column(String(10), unique=False, nullable=False)
+    predicted_score = Column(String(100), unique=False, nullable=False)
 
 
 
