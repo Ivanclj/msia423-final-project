@@ -76,11 +76,3 @@ def run_loading(args):
         df.to_csv(args.save, index=False)
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="")
-    parser.add_argument('--config', help='path to yaml file with configurations')
-    parser.add_argument('--save', default=None, help='Path to where the dataset should be saved to (optional)')
-
-    args = parser.parse_args()
-
-    run_loading(args)

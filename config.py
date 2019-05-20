@@ -5,4 +5,4 @@ APP_NAME = "penny-lane"
 SQLALCHEMY_DATABASE_URI = 'sqlite:///data/churn_prediction.db'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 HOST = "127.0.0.1"
-MAX_ROWS_SHOW = 15
+MAX_ROWS_SHOW = 20

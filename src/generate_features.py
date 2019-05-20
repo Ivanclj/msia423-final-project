@@ -7,7 +7,7 @@ import re
 import pandas as pd
 import numpy as np
 
-from load_data import load_data
+from src.load_data import load_data
 
 logger = logging.getLogger(__name__)
 
@@ -104,12 +104,3 @@ def run_features(args):
     return df
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Generate features")
-    parser.add_argument('--config', help='path to yaml file with configurations')
-    parser.add_argument('--input', default=None, help="Path to CSV for generating features from")
-    parser.add_argument('--output', default=None, help='Path to where the dataset should be saved to (optional)')
-
-    args = parser.parse_args()
-
-    run_features(args)

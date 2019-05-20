@@ -10,25 +10,31 @@ venv: pennylane-env/bin/activate
 
 # Below are for reproducing feature generation, modeling, scoring, evaluation and post-process
 data/churn_processed.csv: src/generate_features.py
-	python src/generate_features.py --config=config/model_config.yml --output=data/churn_processed.csv
+	python run.py generate_features --config=config/model_config.yml --output=data/churn_processed.csv
 
 features: data/churn_processed.csv
 
 models/churn-prediction.pkl: data/churn_processed.csv src/train_model.py
-	python src/train_model.py --config=config/model_config.yml --input=data/churn_processed.csv --output=models/churn-prediction.pkl
+	python run.py train_model --config=config/model_config.yml --input=data/churn_processed.csv --output=models/churn-prediction.pkl
 
 trained-model: models/churn-prediction.pkl
 
 models/churn_test_scores.csv: src/score_model.py
-	python src/score_model.py --config=config/model_config.yml --output=models/churn_test_scores.csv
+	python run.py score_model --config=config/model_config.yml --output=models/churn_test_scores.csv
 
 scores: models/churn_test_scores.csv
 
 models/model_evaluation.csv: src/evaluate_model.py
-	python src/evaluate_model.py --config=config/model_config.yml --output=models/model_evaluation.csv
+	python run.py evaluate_model --config=config/model_config.yml --output=models/model_evaluation.csv
 
 evaluation: models/model_evaluation.csv
 
+
+# Create the database
+data/churn.db:
+	python run.py create
+
+database: data/churn.db
 
 # Pull raw data from github
 get_data:

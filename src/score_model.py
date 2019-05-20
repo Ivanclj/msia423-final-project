@@ -12,8 +12,8 @@ import sklearn
 import pandas as pd
 import numpy as np
 
-from load_data import load_data
-from generate_features import choose_features, get_target
+from src.load_data import load_data
+from src.generate_features import choose_features, get_target
 import xgboost as xgb
 
 logger = logging.getLogger(__name__)
@@ -44,11 +44,24 @@ def score_model(df, path_to_tmo, threshold, save_scores=None, **kwargs):
     y_pred_prob = model.predict_proba(X)[:,1]
     y_predicted = pd.DataFrame(y_pred_prob)
     y_predicted.columns = ['pred_prob']
+    
+    logger.info("chosen threshold is {}".format(threshold))
 
     # assign class label based on threshold
-    y_predicted[y_predicted['pred_prob'] > threshold]['pred'] = 1
-    y_predicted[y_predicted['pred_prob'] <= threshold]['pred'] = 0
-    
+    def predicted_label(row):
+        """helper function for assign predicted labels."""
+        if row['pred_prob'] > threshold:
+            return 1
+        else:
+            return 0
+    y_predicted['pred'] = y_predicted.apply (lambda row: predicted_label(row), axis=1)
+
+    #y_predicted.loc[y_predicted['pred_prob'] > threshold]['pred'] = 1
+    #y_predicted.loc[y_predicted['pred_prob'] <= threshold]['pred'] = 0
+    # see if there are two columns
+    if len(y_predicted.columns) > 0:
+            logger.info("The following columns are included in scores: %s", ",".join(y_predicted.columns))
+
     # save prediction results
     if save_scores is not None:
         y_predicted.to_csv(save_scores, index=False)
@@ -76,12 +89,3 @@ def run_scoring(args):
         pd.DataFrame(y_predicted).to_csv(args.output, index=False)
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Score model")
-    parser.add_argument('--config', '-c', help='path to yaml file with configurations')
-    parser.add_argument('--input', '-i', default=None, help="Path to CSV for input to model scoring")
-    parser.add_argument('--output', '-o', default=None, help='Path to where the scores should be saved to (optional)')
-
-    args = parser.parse_args()
-
-    run_scoring(args)

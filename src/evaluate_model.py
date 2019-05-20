@@ -77,13 +77,3 @@ def run_evaluation(args):
         confusion_df.to_csv(args.output)
         logger.info("Model evaluation saved to %s", args.output)
 
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Evaluate model")
-    parser.add_argument('--config', help='path to yaml file with configurations')
-    parser.add_argument('--input', default=None, help="Path to CSV for input to model scoring")
-    parser.add_argument('--output', default=None, help="Path to CSV for output to confusion matrix")
-
-    args = parser.parse_args()
-
-    run_evaluation(args)

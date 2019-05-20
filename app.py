@@ -17,6 +17,9 @@ app = Flask(__name__)
 # Configure flask app from config.py
 app.config.from_object('config')
 
+# Configure flask app from flask_config.py
+#app.config.from_pyfile('./flask_config.py')
+
 # Define LOGGING_CONFIG in config.py - path to config file for setting
 # up the logger (e.g. config/logging/local.conf)
 logging.config.fileConfig(app.config["LOGGING_CONFIG"])

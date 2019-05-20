@@ -53,8 +53,8 @@ Display of trends in customer retentions as the app is being used for a continuo
  - Story 1: Document current retention rate and recalculate customer retention each trial/quarter/year as new customers are added through the app on a continuous basis. The bank might have a certain goal as to what percentage of customers it wants to retain each year. If that is not met, then the bank has to evaluate its product, customer service, or marketing campaigns to increase retention.
 
 ### Backlog
-1. Theme.epic1.story1: General Exploration (2 points) - PLANNED for next two weeks
-2. Theme.epic1.story2: Understanding Two Groups (2 points) - PLANNED for next two weeks
+1. Theme.epic1.story1: General Exploration (2 points) 
+2. Theme.epic1.story2: Understanding Two Groups (2 points) 
 3. Theme.epic1.story3: Demographic Group Exploration (2 points)
 4. Theme.epic2.story1: Feature Selection (1 point)
 5. Theme.epic2.story2: Model Building (4 points)
@@ -78,13 +78,11 @@ Display of trends in customer retentions as the app is being used for a continuo
 ```
 ├── README.md                         <- You are here
 │
-├── app
-│   ├── static/                       <- CSS, JS files that remain static 
-│   ├── templates/                    <- HTML (or other code) that is templated and changes based on a set of inputs
+├── app 
 │   ├── models.py                     <- Creates the data model for the database connected to the Flask app 
 │   ├── __init__.py                   <- Initializes the Flask app and database connection
 │
-├── config                            <- Directory for yaml configuration files for model training, scoring, etc
+├── config                            <- Directory for yaml configuration files for feature generation, model training, scoring, etc.
 │   ├── logging/                      <- Configuration files for python loggers
 │
 ├── data                              <- Folder that contains data used or generated. Only the external/ and sample/ subdirectories are tracked by git. 
@@ -96,7 +94,7 @@ Display of trends in customer retentions as the app is being used for a continuo
 │
 ├── figures                           <- Generated graphics and figures to be used in reporting.
 │
-├── models                            <- Trained model objects (TMOs), model predictions, and/or model summaries
+├── models                            <- Trained model objects (TMOs), model predictions, and model evaluations.
 │   ├── archive                       <- No longer current models. This directory is included in the .gitignore and is not tracked by git
 │
 ├── notebooks
@@ -107,18 +105,19 @@ Display of trends in customer retentions as the app is being used for a continuo
 │
 ├── src                               <- Source data for the project 
 │   ├── archive/                      <- No longer current scripts.
-│   ├── helpers/                      <- Helper scripts used in main src files 
-│   ├── sql/                          <- SQL source code
-│   ├── add_songs.py                  <- Script for creating a (temporary) MySQL database and adding songs to it 
-│   ├── ingest_data.py                <- Script for ingesting data from different sources 
+│   ├── helpers/                      <- Helper scripts used in main src files.
+│   ├── sql/                          <- SQL source code.
+│   ├── add_songs.py                  <- Script for creating a (temporary) MySQL database and adding songs to it.
+│   ├── import_data.py                <- Script for downloading raw data from github. 
 │   ├── generate_features.py          <- Script for cleaning and transforming data and generating features used for use in training and scoring.
-│   ├── train_model.py                <- Script for training machine learning model(s)
+│   ├── train_model.py                <- Script for training a machine learning model.
 │   ├── score_model.py                <- Script for scoring new predictions using a trained model.
-│   ├── postprocess.py                <- Script for postprocessing predictions and model results
-│   ├── evaluate_model.py             <- Script for evaluating model performance 
+│   ├── evaluate_model.py             <- Script for evaluating model performance.
 │
 ├── test                              <- Files necessary for running model tests (see documentation below) 
-
+│
+├── static/                           <- CSS, JS files that remain static
+├── templates/                        <- HTML (or other code) that is templated and changes based on a set of inputs
 ├── run.py                            <- Simplifies the execution of one or more of the src scripts 
 ├── app.py                            <- Flask wrapper for running the model 
 ├── config.py                         <- Configuration file for Flask app

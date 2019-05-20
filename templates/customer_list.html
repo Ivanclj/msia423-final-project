@@ -96,7 +96,7 @@
             </tr>
           </thead>
         <tbody>
-          {% for customer in customers %}
+          {% for customer in customers | sort(attribute='predicted_score', reverse=True) %}
             {% if customer.predicted_score > threshold %}
             <tr>
               <td>{{ customer.id }}</td>
