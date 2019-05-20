@@ -1,4 +1,4 @@
-#Midpoint Check
+# Midpoint Check
 
 based on master branch, added the following files:
 https://github.com/tiannfff/msia423-final-project/blob/midproject/src/upload_data.py
@@ -6,13 +6,13 @@ https://github.com/tiannfff/msia423-final-project/blob/midproject/src/import_dat
 https://github.com/tiannfff/msia423-final-project/blob/midproject/src/sql/models.py
 Makefile: for convenient execution
 
-##import_data.py: 
+## import_data.py: 
 download data from a GitHub repo to ./data/sample/Churn_Modelling.csv
 command to run: 1) cd path_to_repo/src 2) change save_path to ./data/sample/Churn_Modelling.csv 3) python import_data.py
 OR using Makefile
 command to run: 1) cd path_to_repo 2) make get_data
 
-##upload_data.py: 
+## upload_data.py: 
 upload data to target s3 bucket, be sure to configure the aws credential in advance
 
 Parameters to be specified:
@@ -21,7 +21,7 @@ Parameters to be specified:
 --output_path: s3 destination file path
 command to run: 1) cd path_to_repo/src 2) python upload_data.py --input_file_path ../data/Churn_Modelling.csv --bucket_name nw-tianfu-s3 --output_file_path churn_data.csv
 
-##models.py: 
+## models.py: 
 create a local database or a db on RDS
 
 Parameters to be specified:
