@@ -113,6 +113,7 @@ Display of trends in customer retentions as the app is being used for a continuo
 │   ├── train_model.py                <- Script for training a machine learning model.
 │   ├── score_model.py                <- Script for scoring new predictions using a trained model.
 │   ├── evaluate_model.py             <- Script for evaluating model performance.
+│   ├── README.md                     <- Documentation for midproject check instructions.
 │
 ├── test                              <- Files necessary for running model tests (see documentation below) 
 │
