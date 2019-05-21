@@ -191,7 +191,7 @@ To add additional songs:
 
 ### 5. Interact with the application 
 
-Go to [http://127.0.0.1:3000/]( http://127.0.0.1:3000/) to interact with the current version of hte app. 
+Go to [http://127.0.0.1:3002/]( http://127.0.0.1:3002/) to interact with the current version of hte app. 
 
 ## Testing 
 
