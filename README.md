@@ -1,8 +1,11 @@
 # Midpoint Check
 
 based on master branch, added the following files:
+
 https://github.com/tiannfff/msia423-final-project/blob/midproject/src/upload_data.py
+
 https://github.com/tiannfff/msia423-final-project/blob/midproject/src/import_data.py
+
 https://github.com/tiannfff/msia423-final-project/blob/midproject/src/sql/models.py
 
 Makefile: for convenient execution
