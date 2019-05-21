@@ -31,10 +31,10 @@ evaluation: models/model_evaluation.csv
 
 
 # Create the database
-data/churn.db:
-	python run.py create
+#data/churn.db:
+#	python run.py create
 
-database: data/churn.db
+#database: data/churn.db
 
 # Pull raw data from github
 get_data:

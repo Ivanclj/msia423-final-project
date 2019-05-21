@@ -109,10 +109,13 @@ Display of trends in customer retentions as the app is being used for a continuo
 │   ├── sql/                          <- SQL source code.
 │   ├── add_songs.py                  <- Script for creating a (temporary) MySQL database and adding songs to it.
 │   ├── import_data.py                <- Script for downloading raw data from github. 
-│   ├── generate_features.py          <- Script for cleaning and transforming data and generating features used for use in training and scoring.
+│   ├── upload_data.py                <- Script for uploading data files to S3 bucket. 
+│   ├── load_data.py                  <- Script for loading data files saved to desired location. 
+│   ├── generate_features.py          <- Script for cleaning and transforming data and generating features used for training and scoring.
 │   ├── train_model.py                <- Script for training a machine learning model.
 │   ├── score_model.py                <- Script for scoring new predictions using a trained model.
 │   ├── evaluate_model.py             <- Script for evaluating model performance.
+│   ├── test.py                       <- Script for running unit tests on functions in src/.
 │
 ├── test                              <- Files necessary for running model tests (see documentation below) 
 │
