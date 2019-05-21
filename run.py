@@ -12,7 +12,7 @@ logging.config.fileConfig(app.config["LOGGING_CONFIG"])
 logger = logging.getLogger("run-penny-lane")
 logger.debug('Test log')
 
-#from src.add_songs import create_db, add_track
+#from src.add_songs import create_db
 from src.load_data import run_loading
 from src.generate_features import run_features
 from src.train_model import run_training
