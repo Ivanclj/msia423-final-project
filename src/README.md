@@ -13,7 +13,7 @@ Makefile: for convenient execution
 Note: Please clone or download this repo before proceeding. upload_data.py needs to be run in AWS so please clone this repo to the AWS environment.
 
 ## import_data.py: 
-download data from a GitHub repo to ./data/sample/Churn_Modelling.csv
+download data from a GitHub repo to path_to_repo/data/Churn_Modelling.csv
 
 command to run: 1) cd path_to_repo/src 2) in import_data.py, change save_path to "../data/Churn_Modelling.csv" 3) python import_data.py
 
@@ -35,7 +35,7 @@ command to run: 1) cd path_to_repo/src 2) python upload_data.py --input_file_pat
 create a local database or a db on RDS
 
 Parameters to be specified:
---RDS: True to create RDS table, default is False (to create local db)
+--RDS: True to create RDS table, default is False (to create local db in sql/)
 
 command to run: 1) cd path_to_repo/src/sql 2) python models.py --RDS True
 
