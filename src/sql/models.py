@@ -37,7 +37,7 @@ class Churn_Prediction(Base):
     hasCrCard = Column(Integer, unique=False, nullable=False)
     tenure = Column(Float, unique=False, nullable=False)
 
-    predicted_score = Column(String(10), unique=False, nullable=False)
+    predicted_score = Column(Float, unique=False, nullable=False)
 
 
 
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     session = Session()
 
     first_user = Churn_Prediction(age=27,activeMember=1,numProducts=2,fromGermany=0,
-        gender=1,balance=500.89,hasCrCard=1,tenure=2,predicted_score="1")
+        gender=1,balance=500.89,hasCrCard=1,tenure=2,predicted_score=0.98)
     session.add(first_user)
     session.commit()
 
