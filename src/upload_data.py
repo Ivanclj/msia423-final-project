@@ -8,7 +8,7 @@ import argparse
 import boto3
 
 def upload_data(args):
-	s3 = boto3.client("s3", aws_access_key_id=args.access_key_id, aws_secret_access_key=args.secret_access_key)
+    s3 = boto3.client("s3", aws_access_key_id=args.access_key_id, aws_secret_access_key=args.secret_access_key)
     s3.upload_file(args.input_file_path,args.bucket_name,args.output_file_path)
 
 
