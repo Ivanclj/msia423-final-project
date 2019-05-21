@@ -34,10 +34,15 @@ command to run: 1) cd path_to_repo 2) keep save_path "data/Churn_Modelling.csv" 
 upload data to target s3 bucket, be sure to configure the aws credential in advance
 
 Parameters to be specified:
+
 --input_path: local file path to data, e.g., ../data/Churn_Modelling.csv
+
 --bucket_name: target bucket name
+
 --output_path: s3 destination file path
+
 --access_key_id: private s3 bucket access key id (default is None for public buckets)
+
 --secret_access_key: private s3 bucket secret access key (default is None for public buckets)
 
 command to run: 1) cd path_to_repo/src 2) python upload_data.py --input_file_path ../data/sample/Churn_Modelling.csv --bucket_name my-s3-bucket-name --output_file_path churn_data.csv --access_key_id <my_s3_access_key_id> --secret_access_key <my_s3_secret_access_key>
@@ -48,6 +53,7 @@ Note: no need to input last two arguments if your s3 bucket is public.
 create a local database or a db on RDS
 
 Parameters to be specified:
+
 --RDS: True to create RDS table, default is False (to create local db in sql/)
 
 command to run: 1) cd path_to_repo/src/sql 2) python models.py --RDS True
