@@ -15,11 +15,11 @@ Note: Please clone or download this repo before proceeding. upload_data.py needs
 ## import_data.py: 
 download data from a GitHub repo to ./data/sample/Churn_Modelling.csv
 
-command to run: 1) cd path_to_repo/src 2) in import_data.py, change save_path to ../data/Churn_Modelling.csv 3) python import_data.py
+command to run: 1) cd path_to_repo/src 2) in import_data.py, change save_path to "../data/Churn_Modelling.csv" 3) python import_data.py
 
 OR using Makefile
 
-command to run: 1) cd path_to_repo 2) make get_data
+command to run: 1) cd path_to_repo 2) keep save_path "data/Churn_Modelling.csv" 3) make get_data
 
 ## upload_data.py: 
 upload data to target s3 bucket, be sure to configure the aws credential in advance
