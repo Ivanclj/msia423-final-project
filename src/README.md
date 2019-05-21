@@ -10,7 +10,7 @@ https://github.com/tiannfff/msia423-final-project/blob/midproject/src/sql/models
 
 Makefile: for convenient execution
 
-Note: Please clone or download this repo before proceeding. upload_data.py needs to be run in AWS so please clone this repo to the AWS environment.
+Note: Please clone or download this repo before proceeding. upload_data.py needs to be run in AWS so please clone this repo to the AWS environment, and cd <path_to_repo>
 
 #### Setup Environment with `conda`
 
