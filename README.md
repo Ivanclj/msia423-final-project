@@ -12,6 +12,7 @@ download data from a GitHub repo to ./data/sample/Churn_Modelling.csv
 command to run: 1) cd path_to_repo/src 2) change save_path to ./data/sample/Churn_Modelling.csv 3) python import_data.py
 
 OR using Makefile
+
 command to run: 1) cd path_to_repo 2) make get_data
 
 ## upload_data.py: 
@@ -22,7 +23,7 @@ Parameters to be specified:
 --bucket_name: target bucket name
 --output_path: s3 destination file path
 
-command to run: 1) cd path_to_repo/src 2) python upload_data.py --input_file_path ../data/Churn_Modelling.csv --bucket_name nw-tianfu-s3 --output_file_path churn_data.csv
+command to run: 1) cd path_to_repo/src 2) python upload_data.py --input_file_path ../data/sample/Churn_Modelling.csv --bucket_name nw-tianfu-s3 --output_file_path churn_data.csv
 
 ## models.py: 
 create a local database or a db on RDS
