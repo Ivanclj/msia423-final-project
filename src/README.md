@@ -15,7 +15,7 @@ Note: Please clone or download this repo before proceeding. upload_data.py needs
 ## import_data.py: 
 download data from a GitHub repo to ./data/sample/Churn_Modelling.csv
 
-command to run: 1) cd path_to_repo/src 2) in import_data.py, change save_path to ../data/sample/Churn_Modelling.csv 3) python import_data.py
+command to run: 1) cd path_to_repo/src 2) in import_data.py, change save_path to ../data/Churn_Modelling.csv 3) python import_data.py
 
 OR using Makefile
 
