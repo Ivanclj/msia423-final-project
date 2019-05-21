@@ -4,7 +4,10 @@ based on master branch, added the following files:
 https://github.com/tiannfff/msia423-final-project/blob/midproject/src/upload_data.py
 https://github.com/tiannfff/msia423-final-project/blob/midproject/src/import_data.py
 https://github.com/tiannfff/msia423-final-project/blob/midproject/src/sql/models.py
+
 Makefile: for convenient execution
+
+Note: Please clone or download this repo before proceeding.
 
 ## import_data.py: 
 download data from a GitHub repo to ./data/sample/Churn_Modelling.csv
