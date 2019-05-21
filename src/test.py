@@ -3,9 +3,9 @@ import numpy as np
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 
-from generate_features import choose_features
-from train_model import split_data
-from evaluate_model import evaluate_model
+from src.generate_features import choose_features
+from src.train_model import split_data
+from src.evaluate_model import evaluate_model
 
 def test_choose_features():
     # load sample test data
@@ -35,15 +35,15 @@ def test_split_data():
 
 def test_evaluate_model():
     # test data input
-    score_input = {'pred': [1,0,1,1,1,0,0,1,0,1],
-                   'pred_prob': [0.998,0,0.99,0.914,0.993,0,0.006,0.999,0.00046,0.999]}
+    score_input = {'pred_prob': [0.998,0,0.99,0.914,0.993,0,0.006,0.999,0.00046,0.999],
+                   'pred': [1,0,1,1,1,0,0,1,0,1]}
     label_input = {'class':[0,1,0,1,0,1,0,0,1,0]}
 
     score_df = pd.DataFrame(score_input)
     label_df = pd.DataFrame(label_input)
 
     # desired output dataframe
-    output = confusion_matrix(label_df, score_df.iloc[:,0])
+    output = confusion_matrix(label_df, score_df.iloc[:,1])
     output_df = pd.DataFrame(output,
         index=['Actual Negative','Actual Positive'],
         columns=['Predicted Negative', 'Predicted Positive'])
