@@ -10,7 +10,7 @@ https://github.com/tiannfff/msia423-final-project/blob/midproject/src/sql/models
 
 Makefile: for convenient execution
 
-Note: Please clone or download this repo before proceeding.
+Note: Please clone or download this repo before proceeding. upload_data.py needs to be run in AWS so please clone this repo to the AWS environment.
 
 ## import_data.py: 
 download data from a GitHub repo to ./data/sample/Churn_Modelling.csv
