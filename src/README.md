@@ -12,6 +12,15 @@ Makefile: for convenient execution
 
 Note: Please clone or download this repo before proceeding. upload_data.py needs to be run in AWS so please clone this repo to the AWS environment.
 
+#### Setup Environment with `conda`
+
+```bash
+conda create -n pennylane python=3.7
+conda activate pennylane
+pip install -r requirements.txt
+
+```
+
 ## import_data.py: 
 download data from a GitHub repo to path_to_repo/data/Churn_Modelling.csv
 
