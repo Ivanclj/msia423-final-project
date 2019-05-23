@@ -32,19 +32,30 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
-    """Main view that customer churn predictor.
-    Create view into index page that uses data queried from Churn_Prediction database and
-    inserts it into the templates/index.html template.
+    """Homepage of this prediction system.
     Returns: rendered html template
     """
 
-#    try:
-#        customers = db.session.query(Churn_Prediction).limit(app.config["MAX_ROWS_SHOW"]).all()
-#        logger.debug("Index page accessed")
-#        return render_template('index.html', customers=customers)
-#    except:
-#        logger.warning("Not able to display customers, error page returned")
-    return render_template('index.html')
+    try:
+        return render_template('homepage.html')
+    except:
+        logger.warning("Not able to display homepage, error page returned")
+        return render_template('error.html')
+
+@app.route('/navigate', methods=['POST','GET'])
+def navigate():
+    """Main view that get customer information for evaluation.
+    Create view into evaluation page that allows to input customer information
+    and inserts it into the templates/index.html template.
+    Returns: rendered html template
+    """
+
+    try:
+       # redirect to choose threshold page
+       return render_template('index.html')
+    except:
+       logger.warning("Not able to enter customer information, error page returned")
+       return render_template('error.html')
 
 
 @app.route('/list', methods=['POST','GET'])

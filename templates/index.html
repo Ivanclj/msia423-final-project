@@ -26,9 +26,9 @@
   color: black;
 }
 .banner-content h1 {
-  text-shadow: 2px 2px grey;
-  font-size: 45px;
-  font-family: Chalkduster;
+  text-shadow: 2px 3px grey;
+  font-size: 50px;
+  font-family: "Gill Sans", sans-serif;
   margin-left: 0px;
   margin-top: -70px;
   margin-right: -150px;
@@ -83,10 +83,10 @@ input[type=submit]:hover {
 			<div class="col-lg-6 col-md-7 col-sm-8">
 			<div class="banner-content">
 
-			<h1>Bank Customer Churn Predictor</h1>
+			<h1>Customer Churn Evaluator</h1>
       <a class="buttonload" href=/list>
       <button class="buttonload">
-        <i class="fa fa-spinner fa-spin"></i>List - who is most likely to churn
+        <i class="fa fa-spinner fa-spin"></i> Aggregation
       </button>
       </a>
 
@@ -124,15 +124,16 @@ input[type=submit]:hover {
         			<label>How long has this customer been using our services? (numerical number)</label>
         			<input type=number size=15 name=Tenure min=0 step=0.01 max=110 required=required placeholder="Tenure" />
       			</div>
+            <hr/>
 
       			<dl>
-        			<input type=submit value=Evaluate>
+        			<input type=submit value=Submit>
       			</dl>
 
       			<table>
          			<thead>
             			<tr>
-               			<th style="font-size:30px; font-family: Bradley Hand">Evaluation Result</th>
+               			<th style="font-size:25px; font-family: "Gill Sans", sans-serif">Evaluation Result</th>
             			</tr>
          			</thead>
 				    <tbody>
