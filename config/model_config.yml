@@ -20,6 +20,7 @@ generate_features:
     features_to_use: ['CreditScore', 'Geography', 'Gender', 'Age', 'Tenure', 'Balance', 'NumOfProducts',
                       'HasCrCard', 'IsActiveMember', 'EstimatedSalary']
     target: Exited
+  to_dummy: ['Geography', 'Gender']
   save_features: data/churn_processed.csv
 
 train_model:

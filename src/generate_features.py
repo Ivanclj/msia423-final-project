@@ -68,17 +68,18 @@ def generate_features(df, save_features=None, **kwargs):
     choose_features_kwargs = kwargs["choose_features"]
     df = choose_features(df, **choose_features_kwargs)
 
-    # create dummy for Geography and Gender
-    Geography = pd.get_dummies(df['Geography'], drop_first=True)
-    Gender = pd.get_dummies(df['Gender'], drop_first=True)
-    df.drop(['Geography','Gender'],axis=1,inplace=True)
-    # new dataframe after encode categorical variables as dummies
-    df1 = pd.concat([df,Geography,Gender],axis=1)
+    # create dummy for selected features specified in config
+    if 'to_dummy' in kwargs and len(kwargs['to_dummy'])>0:
+        for var in kwargs['to_dummy']:
+            var_dummy = pd.get_dummies(df[var], drop_first=True)
+            df.drop([var],axis=1,inplace=True)
+            # new dataframe after encode categorical variables as dummies
+            df = pd.concat([df,var_dummy],axis=1)
 
     if save_features is not None:
-        df1.to_csv(save_features, index=False)
+        df.to_csv(save_features, index=False)
 
-    return df1
+    return df
 
 
 def run_features(args):
