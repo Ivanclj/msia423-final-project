@@ -99,10 +99,30 @@ if __name__ == "__main__":
     # create a db session
     Session = sessionmaker(bind=engine)  
     session = Session()
-
-    first_user = Churn_Prediction(age=1,activeMember=1,numProducts=1,fromGermany=1,
-        gender=1,balance=1,hasCrCard=1,tenure=1,predicted_score=0.057)
+    # add precalculated users and scores
+    first_user = Churn_Prediction(age=50,activeMember=1,numProducts=3,fromGermany=1,
+        gender=1,balance=70000,hasCrCard=1,tenure=10,predicted_score=0.90703)
     session.add(first_user)
+    session.commit()
+
+    second_user = Churn_Prediction(age=32,activeMember=0,numProducts=2,fromGermany=1,
+        gender=1,balance=96709.07,hasCrCard=0,tenure=3,predicted_score=0.04434)
+    session.add(second_user)
+    session.commit()
+
+    third_user = Churn_Prediction(age=57,activeMember=1,numProducts=3,fromGermany=0,
+        gender=0,balance=0.0,hasCrCard=1,tenure=9,predicted_score=0.95043)
+    session.add(third_user)
+    session.commit()
+
+    fourth_user = Churn_Prediction(age=22,activeMember=1,numProducts=1,fromGermany=0,
+        gender=0,balance=200.0,hasCrCard=1,tenure=0.7,predicted_score=0.15419)
+    session.add(fourth_user)
+    session.commit()
+
+    fifth_user = Churn_Prediction(age=80,activeMember=1,numProducts=1,fromGermany=0,
+        gender=0,balance=30000.0,hasCrCard=1,tenure=12.0,predicted_score=0.02806)
+    session.add(fifth_user)
     session.commit()
 
     logger.info("Data added")
