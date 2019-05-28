@@ -194,7 +194,7 @@ Go to [http://127.0.0.1:3002/]( http://127.0.0.1:3002/) to interact with the cur
 
 ## Testing 
 
-Run `pytest` from the command line in the main project repository. 
+Run `make test` from the command line in the main project repository. 
 
 
 Tests exist in `src/test.py`
