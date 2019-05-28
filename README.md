@@ -79,7 +79,6 @@ Display of trends in customer retentions as the app is being used for a continuo
 ├── README.md                         <- You are here
 │
 ├── app 
-│   ├── models.py                     <- Creates the data model for the database connected to the Flask app 
 │   ├── __init__.py                   <- Initializes the Flask app and database connection
 │
 ├── config                            <- Directory for yaml configuration files for feature generation, model training, scoring, etc.
@@ -112,6 +111,7 @@ Display of trends in customer retentions as the app is being used for a continuo
 │   ├── train_model.py                <- Script for training a machine learning model.
 │   ├── score_model.py                <- Script for scoring new predictions using a trained model.
 │   ├── evaluate_model.py             <- Script for evaluating model performance.
+│   ├── models.py                     <- Creates the data model for the database connected to the Flask app.
 │   ├── README.md                     <- Documentation for midproject check instructions.
 │
 ├── test                              <- Files necessary for running model tests (see documentation below) 
