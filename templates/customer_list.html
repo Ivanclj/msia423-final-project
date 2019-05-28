@@ -78,7 +78,20 @@
       <a class="buttonload" href=/>
       <button class="btn"><i class="fa fa-home"></i></button>
       </a>
+
+      <!-- count number of selected customers -->
+      {% set cnt = [0] %}
+      {% set total = [0] %}
+      {% for customer in customers%}
+        {% if total.append(total.pop() + 1) %}{% endif %}
+        {% if customer.predicted_score > threshold %}
+          {% if cnt.append(cnt.pop() + 1) %}{% endif %} 
+        {% endif %}
+      {% endfor %}
+
       <h4>chosen threshold churn probability: {{threshold}}</h4>
+      <!-- calculate retention rate assuming customer above threshold all churned -->
+      <h4>estimated retention rate: {{'%0.1f' % (((total[-1] - cnt[-1])/total[-1])*100) | float }}%</h4>
         <hr/>
         <table>
           <thead>
@@ -95,6 +108,7 @@
               <th style="padding:0 15px 0 15px;">Likelihood of Churn</th>
             </tr>
           </thead>
+          
         <tbody>
           {% for customer in customers | sort(attribute='predicted_score', reverse=True) %}
             {% if customer.predicted_score > threshold %}
@@ -115,18 +129,6 @@
         </tbody>
         </table>
 
-<!--       			<table>
-         			<thead>
-            			<tr>
-               			<th style="font-size:30px; font-family: Bradley Hand">Evaluation Result</th>
-            			</tr>
-         			</thead>
-				    <tbody>
-               	<tr>
-                  <td style="font-size:25px; color: #14569C; font-family: Bradley Hand">{{result}}</td>
-                </tr>
-         		</tbody>
-      			</table> -->
 			</div>
 			</div>
         
