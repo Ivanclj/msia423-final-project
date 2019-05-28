@@ -85,10 +85,8 @@ Display of trends in customer retentions as the app is being used for a continuo
 ├── config                            <- Directory for yaml configuration files for feature generation, model training, scoring, etc.
 │   ├── logging/                      <- Configuration files for python loggers
 │
-├── data                              <- Folder that contains data used or generated. Only the external/ and sample/ subdirectories are tracked by git. 
-│   ├── archive/                      <- Place to put archive data is no longer usabled. Not synced with git. 
-│   ├── external/                     <- External data sources, will be synced with git
-│   ├── sample/                       <- Sample data used for code development and testing, will be synced with git
+├── data                              <- Folder that contains data used or generated. Only the sample/ and database/ subdirectories are tracked by git. 
+│   ├── sample/                       <- External data used for code development and testing, will be synced with git
 │   ├── database/                     <- Database with initial customers used for app, will be synced with git
 │
 ├── docs                              <- A default Sphinx project; see sphinx-doc.org for details.
