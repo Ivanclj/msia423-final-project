@@ -30,19 +30,13 @@ models/model_evaluation.csv: src/evaluate_model.py
 evaluation: models/model_evaluation.csv
 
 
-# Create the database
-#data/churn.db:
-#	python run.py create
-
-#database: data/churn.db
-
 # Pull raw data from github
 get_data:
 	python src/import_data.py
 
 # Run all tests
 test:
-	pytest src/test.py
+	pytest test/test.py
 
 # Clean up things
 clean-tests:
