@@ -107,7 +107,6 @@ Display of trends in customer retentions as the app is being used for a continuo
 │   ├── archive/                      <- No longer current scripts.
 │   ├── helpers/                      <- Helper scripts used in main src files.
 │   ├── sql/                          <- SQL source code.
-│   ├── add_songs.py                  <- Script for creating a (temporary) MySQL database and adding songs to it.
 │   ├── import_data.py                <- Script for downloading raw data from github. 
 │   ├── upload_data.py                <- Script for uploading data files to S3 bucket. 
 │   ├── load_data.py                  <- Script for loading data files saved to desired location. 
@@ -179,6 +178,7 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database/churn_prediction.db'  # URI f
 To create the database in the location configured in `config.py` with five initial customers, run: 
 
 `1) cd path_to_repo/src`
+
 `2) python models.py --RDS False`
 
 
