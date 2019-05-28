@@ -169,7 +169,7 @@ pip install -r requirements.txt
 DEBUG = True  # Keep True for debugging, change to False when moving to production 
 LOGGING_CONFIG = "config/logging/local.conf"  # Path to file that configures Python logger
 PORT = 3002  # What port to expose app on 
-SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/tracks.db'  # URI for database that contains tracks
+SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database/churn_prediction.db'  # URI for database that contains tracks
 
 ```
 
