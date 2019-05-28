@@ -190,14 +190,14 @@ To create the database in the location configured in `config.py` with five initi
 
 ### 5. Interact with the application 
 
-Go to [http://127.0.0.1:3002/]( http://127.0.0.1:3002/) to interact with the current version of hte app. 
+Go to [http://127.0.0.1:3002/]( http://127.0.0.1:3002/) to interact with the current version of the app. 
 
 ## Testing 
 
 Run `pytest` from the command line in the main project repository. 
 
 
-Tests exist in `test/test_helpers.py`
+Tests exist in `src/test.py`
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTQyOTcxNjUwNV19
 -->
