@@ -176,13 +176,10 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database/churn_prediction.db'  # URI f
 
 ### 3. Initialize the database 
 
-To create the database in the location configured in `config.py` with one initial song, run: 
+To create the database in the location configured in `config.py` with five initial customers, run: 
 
-`python run.py create --artist=<ARTIST> --title=<TITLE> --album=<ALBUM>`
-
-To add additional songs:
-
-`python run.py ingest --artist=<ARTIST> --title=<TITLE> --album=<ALBUM>`
+`1) cd path_to_repo/src`
+`2) python models.py --RDS False`
 
 
 ### 4. Run the application 
