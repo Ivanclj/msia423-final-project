@@ -1,5 +1,6 @@
 import pickle
 import traceback
+import os
 import xgboost
 import pandas as pd
 from flask import render_template, request, redirect, url_for
@@ -143,9 +144,9 @@ def add_entry():
         else:
             evaluation = "unlikely to churn"
 
-        customer1 = Churn_Prediction(age=Age, activeMember=IsActiveMember, numProducts=NumOfProducts,
-            fromGermany=Germany, gender=Male, balance=Balance, hasCrCard=HasCrCard,
-            tenure=Tenure, predicted_score=prob)
+        customer1 = Churn_Prediction(age=float(Age), activeMember=float(IsActiveMember), numProducts=float(NumOfProducts),
+            fromGermany=float(Germany), gender=float(Male), balance=float(Balance), hasCrCard=float(HasCrCard),
+            tenure=float(Tenure), predicted_score=float(prob))
         db.session.add(customer1)
         db.session.commit()
 
