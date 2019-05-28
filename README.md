@@ -112,10 +112,10 @@ Display of trends in customer retentions as the app is being used for a continuo
 │   ├── train_model.py                <- Script for training a machine learning model.
 │   ├── score_model.py                <- Script for scoring new predictions using a trained model.
 │   ├── evaluate_model.py             <- Script for evaluating model performance.
-│   ├── test.py                       <- Script for running unit tests on functions in src/.
 │   ├── README.md                     <- Documentation for midproject check instructions.
 │
 ├── test                              <- Files necessary for running model tests (see documentation below) 
+│   ├── test.py                       <- Script for running unit tests on functions in src/.
 │
 ├── static/                           <- CSS, JS files that remain static
 ├── templates/                        <- HTML (or other code) that is templated and changes based on a set of inputs
@@ -195,7 +195,7 @@ Go to [http://127.0.0.1:3002/]( http://127.0.0.1:3002/) to interact with the cur
 Run `make test` from the command line in the main project repository. 
 
 
-Tests exist in `src/test.py`
+Tests exist in `test/test.py`
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTQyOTcxNjUwNV19
 -->
