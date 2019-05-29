@@ -175,14 +175,16 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database/churn_prediction.db'  # URI f
 
 To create the database in the location configured in `config.py` with five initial customers, run: 
 
-`1) cd path_to_repo/src`
-
-`2) python models.py --RDS False`
+```bash
+cd path_to_repo/src
+python models.py --RDS False
+```
 
 
 ### 4. Run the application 
  
  ```bash
+ cd path_to_repo
  python app.py 
  ```
 
