@@ -117,7 +117,7 @@ def add_entry():
         logger.info("all inputs retrieved!")
 
         # load trained model
-        path_to_tmo = "models/churn-prediction.pkl"
+        path_to_tmo = app.config["PATH_TO_MODEL"]
         with open(path_to_tmo, "rb") as f:
             model = pickle.load(f)
         logger.info("model loaded!")
