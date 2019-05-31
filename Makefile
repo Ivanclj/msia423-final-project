@@ -39,6 +39,12 @@ data/Churn_Modelling.csv: src/import_data_s3.py
 	python src/import_data_s3.py --sourceurl https://nw-tianfu-project-data.s3.us-east-2.amazonaws.com/Churn_Modelling.csv --filename Churn_Modelling.csv --savename data/Churn_Modelling.csv
 get_data_s3: data/Churn_Modelling.csv
 
+
+# Run the Flask application
+app: app.py
+	python app.py
+
+
 # Run all tests
 test:
 	pytest test/test.py

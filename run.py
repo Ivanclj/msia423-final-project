@@ -9,10 +9,9 @@ from app import app
 
 # Define LOGGING_CONFIG in config.py - path to config file for setting up the logger (e.g. config/logging/local.conf)
 logging.config.fileConfig(app.config["LOGGING_CONFIG"])
-logger = logging.getLogger("run-penny-lane")
+logger = logging.getLogger("run-churn-predictor")
 logger.debug('Test log')
 
-#from src.add_songs import create_db
 from src.load_data import run_loading
 from src.generate_features import run_features
 from src.train_model import run_training
@@ -62,8 +61,8 @@ if __name__ == '__main__':
     sb_eval.add_argument('--input', default=None, help="Path to CSV for input to model evaluation")
     sb_eval.add_argument('--output', default=None, help='Path to where the dataset should be saved to (optional')
     sb_eval.set_defaults(func=run_evaluation)
-
-
+    
+    # RUN APP subparser
     sb_run = subparsers.add_parser("app", description="Run Flask app")
     sb_run.set_defaults(func=run_app)
 
