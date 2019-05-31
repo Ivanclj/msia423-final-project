@@ -68,6 +68,7 @@ create a local database or a db on RDS
 Parameters to be specified:
 
 --RDS: True to create RDS table, default is False (to create local db in data/database/); no need to specify it if running locally
+
 --local_URI: default at sqlite:///../data/database/churn_prediction.db; no need to specify it
 
 command to run: 1) cd path_to_repo/src 2) python models.py -> this will create a db locally
