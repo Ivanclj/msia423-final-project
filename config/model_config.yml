@@ -44,7 +44,6 @@ score_model:
   threshold: 0.5
   choose_features:
     features_to_use: ['Age', 'Tenure', 'Balance', 'NumOfProducts', 'HasCrCard', 'IsActiveMember', 'Germany', 'Male']
-
   save_scores: models/churn_test_scores.csv
 
 evaluate_model:
