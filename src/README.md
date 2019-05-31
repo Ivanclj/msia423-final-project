@@ -21,7 +21,7 @@ pip install -r requirements.txt
 
 ```
 
-## import_data.py: 
+## import_data_github.py: 
 download data from a GitHub repo to path_to_repo/data/Churn_Modelling.csv
 
 command to run: 1) cd path_to_repo/src 2) in import_data.py, change save_path to "../data/Churn_Modelling.csv" 3) python import_data.py

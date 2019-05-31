@@ -32,7 +32,7 @@ evaluation: models/model_evaluation.csv
 
 # Pull raw data from github
 get_data:
-	python src/import_data.py
+	python src/import_data_github.py
 
 # Run all tests
 test:

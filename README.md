@@ -105,7 +105,7 @@ Display of trends in customer retentions as the app is being used for a continuo
 │   ├── archive/                      <- No longer current scripts.
 │   ├── helpers/                      <- Helper scripts used in main src files.
 │   ├── sql/                          <- SQL source code.
-│   ├── import_data.py                <- Script for downloading raw data from github. 
+│   ├── import_data_github.py                <- Script for downloading raw data from github. 
 │   ├── upload_data.py                <- Script for uploading data files to S3 bucket. 
 │   ├── load_data.py                  <- Script for loading data files saved to desired location. 
 │   ├── generate_features.py          <- Script for cleaning and transforming data and generating features used for training and scoring.
