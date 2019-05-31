@@ -8,9 +8,14 @@ model:
   dependencies: requirements.txt
 
 load_data:
-  how: load_csv
+  how: load_s3
   load_csv:
     path_to_data: data/sample/Churn_Modelling.csv
+    columns: ['CreditScore', 'Geography', 'Gender', 'Age', 'Tenure', 'Balance', 'NumOfProducts',
+              'HasCrCard', 'IsActiveMember', 'EstimatedSalary', 'Exited']
+  load_s3:
+    sourceurl: https://nw-tianfu-project-data.s3.us-east-2.amazonaws.com/Churn_Modelling.csv
+    file_location: data/Churn_Modelling.csv
     columns: ['CreditScore', 'Geography', 'Gender', 'Age', 'Tenure', 'Balance', 'NumOfProducts',
               'HasCrCard', 'IsActiveMember', 'EstimatedSalary', 'Exited']
   save_data: data/churn_data.csv

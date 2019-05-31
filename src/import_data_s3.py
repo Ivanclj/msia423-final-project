@@ -8,9 +8,9 @@ def download_data(args):
     """
     Downloads raw data from specified public bucket (defined in config) to the local current folder
     
-    :param sourceurl (str): url of the public data
-    :param filename (str): name of the target file
-    :param savename (str): save path of the file
+    :param args.sourceurl (str): url of the public data
+    :param arg.filename (str): name of the target file
+    :param arg.savename (str): save path of the file
 
     Return: None
     """
@@ -25,8 +25,8 @@ if __name__ == "__main__":
     #download data from the source
     parser = argparse.ArgumentParser(description="Download data from S3")
 
-    parser.add_argument("--sourceurl", help="Target S3 bucket name")
-    parser.add_argument("--filename", help="Target file want to dowlaod")
+    parser.add_argument("--sourceurl", help="URL to Target file in s3 bucket")
+    parser.add_argument("--filename", help="Target file want to download")
     parser.add_argument("--savename", help="Filename to be save")
 
     args = parser.parse_args()
