@@ -185,7 +185,7 @@ Note: an empty folder named database under <path_to_main_repository>/data has al
 
 ```bash
 cd path_to_repo/src
-python models.py --RDS False
+python models.py
 ```
 
 
