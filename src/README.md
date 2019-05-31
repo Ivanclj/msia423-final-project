@@ -37,11 +37,18 @@ Parameters to be specified:
 
 --savename: path where to save the file locally
 
-command to run: 1) cd path_to_repo/src 2) python import_data_s3.py --sourceurl https://nw-tianfu-project-data.s3.us-east-2.amazonaws.com/Churn_Modelling.csv --filename Churn_Modelling.csv --savename ../data/Churn_Modelling.csv
+```bash
+command to run:
+1) cd path_to_repo/src
+2) python import_data_s3.py --sourceurl https://nw-tianfu-project-data.s3.us-east-2.amazonaws.com/Churn_Modelling.csv --filename Churn_Modelling.csv --savename ../data/Churn_Modelling.csv
+```
 
 OR using Makefile
-
-command to run: 1) cd path_to_repo 2) make get_data_s3
+```bash
+command to run:
+1) cd path_to_repo 
+2) make get_data_s3
+```
 
 ## upload_data.py: 
 upload data to target s3 bucket, be sure to configure the aws credential in advance
@@ -58,7 +65,11 @@ Parameters to be specified:
 
 --secret_access_key: private s3 bucket secret access key (default is None for public buckets)
 
-command to run: 1) cd path_to_repo/src 2) python upload_data.py --input_file_path ../data/sample/Churn_Modelling.csv --bucket_name my-s3-bucket-name --output_file_path churn_data.csv --access_key_id <my_s3_access_key_id> --secret_access_key <my_s3_secret_access_key>
+```bash
+command to run: 
+1) cd path_to_repo/src 
+2) python upload_data.py --input_file_path ../data/sample/Churn_Modelling.csv --bucket_name my-s3-bucket-name --output_file_path churn_data.csv --access_key_id <my_s3_access_key_id> --secret_access_key <my_s3_secret_access_key>
+```
 
 Note: no need to input last two arguments if your s3 bucket is public.
 
@@ -71,8 +82,13 @@ Parameters to be specified:
 
 --local_URI: default at sqlite:///../data/database/churn_prediction.db; no need to specify it
 
-command to run: 1) cd path_to_repo/src 2) python models.py -> this will create a db locally
+```bash
+command to run: 
+1) cd path_to_repo/src 
+2) python models.py -> this will create a db locally
 
-OR 1) cd path_to_repo/src 2) python models.py --RDS -> this will create a db on RDS
-
+OR
+1) cd path_to_repo/src
+2) python models.py --RDS -> this will create a db on RDS
+```
 Note: check if table is created successfully in logfile
