@@ -158,6 +158,13 @@ pip install -r requirements.txt
 
 ```
 
+#### NOTE: To reproduce the whole model development process locally using Makefile, run following from command line in the main project repository:
+
+```bash
+export SQLALCHEMY_DATABASE_URI='sqlite:///data/database/churn_prediction.db'
+make all
+```
+
 ### 2. Configure Flask app 
 
 `config.py` holds the configurations for the Flask app. It includes the following configurations:
