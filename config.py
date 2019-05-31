@@ -3,7 +3,7 @@ import os
 DEBUG = True
 LOGGING_CONFIG = "config/logging/local.conf"
 PORT = 3002
-APP_NAME = "penny-lane"
+APP_NAME = "churn-predictor"
 
 # local: export SQLALCHEMY_DATABASE_URI='sqlite:///data/database/churn_prediction.db'
 # rds: export SQLALCHEMY_DATABASE_URI="{conn_type}://{user}:{password}@{host}:{port}/{DATABASE_NAME}"
@@ -20,6 +20,6 @@ SQLALCHEMY_DATABASE_URI =SQLALCHEMY_DATABASE_URI.format(conn_type=conn_type, use
 
 
 SQLALCHEMY_TRACK_MODIFICATIONS = True
-HOST = "127.0.0.1" # export HOST
+HOST = "127.0.0.1"
 MAX_ROWS_SHOW = 20
 PATH_TO_MODEL = "models/churn-prediction.pkl"
