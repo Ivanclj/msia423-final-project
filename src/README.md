@@ -20,11 +20,20 @@ pip install -r requirements.txt
 ## import_data_github.py: 
 download data from a GitHub repo to path_to_repo/data/Churn_Modelling.csv
 
-command to run: 1) cd path_to_repo/src 2) in import_data_github.py, change save_path to "../data/Churn_Modelling.csv" 3) python import_data_github.py
+```bash
+command to run: 
+1) cd path_to_repo/src 
+2) in import_data_github.py, change save_path to "../data/Churn_Modelling.csv" 
+3) python import_data_github.py
+```
 
 OR using Makefile
-
-command to run: 1) cd path_to_repo 2) keep save_path "data/Churn_Modelling.csv" 3) make get_data_github
+```bash
+command to run:
+1) cd path_to_repo 
+2) keep save_path "data/Churn_Modelling.csv" 
+3) make get_data_github
+```
 
 ## import_data_s3.py: 
 download data from a public s3 bucket to path_to_repo/data/Churn_Modelling.csv
