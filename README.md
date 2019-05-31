@@ -161,15 +161,19 @@ pip install -r requirements.txt
 ```
 
 ### 2. Configure Flask app 
+To set up environment variable SQLALCHEMY_DATABASE_URI (URL for database that contains bank customers):
+```bash
+Run locally: export SQLALCHEMY_DATABASE_URI='sqlite:///data/database/churn_prediction.db'
+Run on RDS: export SQLALCHEMY_DATABASE_URI="{conn_type}://{user}:{password}@{host}:{port}/{DATABASE_NAME}"
+```
 
 `config.py` holds the configurations for the Flask app. It includes the following configurations:
 
 ```python
 DEBUG = True  # Keep True for debugging, change to False when moving to production 
 LOGGING_CONFIG = "config/logging/local.conf"  # Path to file that configures Python logger
-PORT = 3002  # What port to expose app on 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database/churn_prediction.db'  # URI for database that contains customers from perspective of main project repository
-
+PORT = 3002  # What port to expose app on - CHANGE TO 3000 if running on RDS
+HOST = "127.0.0.1" # Host IP for the app - CHANGE TO "0.0.0.0" if running on RDS
 ```
 
 
