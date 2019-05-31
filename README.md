@@ -93,7 +93,6 @@ Display of trends in customer retentions as the app is being used for a continuo
 ├── figures                           <- Generated graphics and figures to be used in reporting.
 │
 ├── models                            <- Trained model objects (TMOs), model predictions, and model evaluations.
-│   ├── archive                       <- No longer current models. This directory is included in the .gitignore and is not tracked by git
 │
 ├── notebooks
 │   ├── develop                       <- Current notebooks being used in development.
@@ -102,7 +101,6 @@ Display of trends in customer retentions as the app is being used for a continuo
 │   ├── template.ipynb                <- Template notebook for analysis with useful imports and helper functions.
 │
 ├── src                               <- Source data for the project 
-│   ├── archive/                      <- No longer current scripts.
 │   ├── helpers/                      <- Helper scripts used in main src files.
 │   ├── sql/                          <- SQL source code.
 │   ├── import_data_github.py         <- Script for downloading raw data from github. 
