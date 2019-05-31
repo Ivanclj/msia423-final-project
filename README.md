@@ -161,7 +161,7 @@ pip install -r requirements.txt
 ```
 
 ### 2. Configure Flask app 
-To set up environment variable SQLALCHEMY_DATABASE_URI (URL for database that contains bank customers):
+To set up environment variable SQLALCHEMY_DATABASE_URI (URL for database that contains bank customers) from command line:
 ```bash
 Run locally: export SQLALCHEMY_DATABASE_URI='sqlite:///data/database/churn_prediction.db'
 Run on RDS: export SQLALCHEMY_DATABASE_URI="{conn_type}://{user}:{password}@{host}:{port}/{DATABASE_NAME}"
@@ -198,7 +198,7 @@ python models.py --RDS False
 
 ### 5. Interact with the application 
 
-Go to [http://127.0.0.1:3002/]( http://127.0.0.1:3002/) to interact with the current version of the app. 
+Go to [http://127.0.0.1:3002/]( http://127.0.0.1:3002/) to interact with the current version of the app locally. 
 
 ## Testing 
 
