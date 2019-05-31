@@ -6,7 +6,6 @@ import pandas as pd
 from flask import render_template, request, redirect, url_for
 import logging.config
 from app import db, app
-#from app.models import Churn_Prediction
 from flask import Flask
 from src.models import Churn_Prediction
 from flask_sqlalchemy import SQLAlchemy
@@ -17,9 +16,6 @@ app = Flask(__name__)
 
 # Configure flask app from config.py
 app.config.from_object('config')
-
-# Configure flask app from flask_config.py
-#app.config.from_pyfile('./flask_config.py')
 
 # Define LOGGING_CONFIG in config.py - path to config file for setting
 # up the logger (e.g. config/logging/local.conf)
@@ -34,6 +30,7 @@ db = SQLAlchemy(app)
 @app.route('/')
 def index():
     """Homepage of this prediction system.
+    
     Returns: rendered html template
     """
 
@@ -48,6 +45,7 @@ def navigate():
     """Main view that get customer information for evaluation.
     Create view into evaluation page that allows to input customer information
     and inserts it into the templates/index.html template.
+    
     Returns: rendered html template
     """
 
@@ -64,6 +62,7 @@ def list():
     """Main view that get user's choice of threshold for classification.
     Create view into threshold deciding page that determines which customers to be listed in
     later steps and inserts it into the templates/choose_thre.html template.
+    
     Returns: rendered html template
     """
 
@@ -80,6 +79,7 @@ def choose_thre():
     """Main view that lists customers most likely to churn in the database.
     Create view into customer list page that uses data queried from Churn_Prediction database and
     inserts it into the templates/customer_list.html template.
+    
     Returns: rendered html template and user's chosen threshold probability level.
     """
 
