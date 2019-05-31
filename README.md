@@ -173,9 +173,9 @@ HOST = "127.0.0.1" # Host IP for the app - CHANGE TO "0.0.0.0" if running on RDS
 
 ### 3. Initialize the database 
 
-To create the database in the local location configured in `config.py` with five initial customers, run: 
+To create a database in the local location configured in `config.py` with five initial customers, run: 
 
-Note: an empty folder named database under <path_to_main_repository>/data has already been created to save the database.
+Note: an empty folder named database under <path_to_main_repository>/data has to be created to save the db.
 
 ```bash
 cd path_to_repo/src
