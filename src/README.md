@@ -1,12 +1,8 @@
 # Midpoint Check
 
-based on master branch, added the following files:
+based on master branch, added the following files in src/ folder:
 
-https://github.com/tiannfff/msia423-final-project/blob/midproject/src/upload_data.py
-
-https://github.com/tiannfff/msia423-final-project/blob/midproject/src/import_data.py
-
-https://github.com/tiannfff/msia423-final-project/blob/midproject/src/sql/models.py
+upload_data.py, import_data_github.py, import_data_s3.py, models.py
 
 Makefile: for convenient execution
 
