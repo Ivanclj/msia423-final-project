@@ -54,13 +54,13 @@ def score_model(df, path_to_tmo, threshold, save_scores=None, **kwargs):
             return 1
         else:
             return 0
-    y_predicted['pred'] = y_predicted.apply (lambda row: predicted_label(row), axis=1)
+    y_predicted['pred'] = y_predicted.apply(lambda row: predicted_label(row), axis=1)
 
     #y_predicted.loc[y_predicted['pred_prob'] > threshold]['pred'] = 1
     #y_predicted.loc[y_predicted['pred_prob'] <= threshold]['pred'] = 0
     # see if there are two columns
     if len(y_predicted.columns) > 0:
-            logger.info("The following columns are included in scores: %s", ",".join(y_predicted.columns))
+        logger.info("The following columns are included in scores: %s", ",".join(y_predicted.columns))
 
     # save prediction results
     if save_scores is not None:

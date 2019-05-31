@@ -42,7 +42,7 @@ class Churn_Prediction(Base):
 
 
 
-def get_engine_string(RDS = False, conn_type="mysql+pymysql", DATABASE_NAME='msia423'):
+def get_engine_string(conn_type="mysql+pymysql", DATABASE_NAME='msia423'):
     """Get database engine path.
 
     Args:
@@ -60,8 +60,7 @@ def get_engine_string(RDS = False, conn_type="mysql+pymysql", DATABASE_NAME='msi
     host = os.environ.get("MYSQL_HOST")
     port = os.environ.get("MYSQL_PORT")
     
-    engine_string = "{}://{}:{}@{}:{}/{}". \
-        format(conn_type, user, password, host, port, DATABASE_NAME)
+    engine_string = "{}://{}:{}@{}:{}/{}".format(conn_type, user, password, host, port, DATABASE_NAME)
 
     logging.debug("engine string: %s"%engine_string)
     return  engine_string 
