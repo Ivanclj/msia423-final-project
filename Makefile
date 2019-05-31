@@ -31,8 +31,13 @@ evaluation: models/model_evaluation.csv
 
 
 # Pull raw data from github
-get_data:
+get_data_github:
 	python src/import_data_github.py
+
+# Pull raw data from public s3 bucket
+data/Churn_Modelling.csv: src/import_data_s3.py
+	python src/import_data_s3.py --sourceurl https://nw-tianfu-project-data.s3.us-east-2.amazonaws.com/Churn_Modelling.csv --filename Churn_Modelling.csv --savename data/Churn_Modelling.csv
+get_data_s3: data/Churn_Modelling.csv
 
 # Run all tests
 test:

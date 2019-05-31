@@ -16,3 +16,14 @@
 4   5   80             1  ...          1    12.0          0.02806
 
 [5 rows x 10 columns]
+2019-06-01 01:43:36,353 INFO     RDS:False
+2019-06-01 01:43:36,369 INFO     database created
+2019-06-01 01:43:36,383 INFO     Data added
+2019-06-01 01:43:36,387 INFO        id  age  activeMember  ...  hasCrCard  tenure  predicted_score
+0   1   50             1  ...          1    10.0          0.90703
+1   2   32             0  ...          0     3.0          0.04434
+2   3   57             1  ...          1     9.0          0.95043
+3   4   22             1  ...          1     0.7          0.15419
+4   5   80             1  ...          1    12.0          0.02806
+
+[5 rows x 10 columns]
