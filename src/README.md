@@ -73,6 +73,6 @@ Parameters to be specified:
 
 command to run: 1) cd path_to_repo/src 2) python models.py -> this will create a db locally
 
-OR 1) cd path_to_repo/src 2) python models.py --RDS -> this will create a db locally
+OR 1) cd path_to_repo/src 2) python models.py --RDS -> this will create a db on RDS
 
 Note: check if table is created successfully in logfile
