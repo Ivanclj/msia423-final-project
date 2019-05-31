@@ -176,7 +176,7 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database/churn_prediction.db'  # URI f
 
 To create the database in the location configured in `config.py` with five initial customers, run: 
 
-Note: an empty folder named database under <path_to_main_repository>/data has already been created.
+Note: an empty folder named database under <path_to_main_repository>/data has already been created to save the database.
 
 ```bash
 cd path_to_repo/src
