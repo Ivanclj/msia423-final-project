@@ -31,7 +31,7 @@ evaluation: models/model_evaluation.csv
 
 
 # Pull raw data from github
-get_data_github:
+get_data_github: src/import_data_github.py
 	python src/import_data_github.py
 
 # Pull raw data from public s3 bucket
