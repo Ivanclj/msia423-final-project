@@ -167,7 +167,7 @@ pip install -r requirements.txt
 DEBUG = True  # Keep True for debugging, change to False when moving to production 
 LOGGING_CONFIG = "config/logging/local.conf"  # Path to file that configures Python logger
 PORT = 3002  # What port to expose app on 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database/churn_prediction.db'  # URI for database that contains customers
+SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database/churn_prediction.db'  # URI for database that contains customers from perspective of main project repository
 
 ```
 
@@ -175,6 +175,8 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///data/database/churn_prediction.db'  # URI f
 ### 3. Initialize the database 
 
 To create the database in the location configured in `config.py` with five initial customers, run: 
+
+Note: an empty folder named database under <path_to_main_repository>/data has already been created.
 
 ```bash
 cd path_to_repo/src
