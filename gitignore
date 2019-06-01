@@ -10,7 +10,6 @@ __pycache__/
 
 # Folders to place all data science files which you dont want tracked
 data/*
-!data/production/
 !data/sample/
 !data/database/
 models/*
