@@ -46,7 +46,6 @@ def get_engine_string(conn_type="mysql+pymysql", DATABASE_NAME='msia423'):
     """Get database engine path.
 
     Args:
-        RDS (bool): Whether to create a db locally or on RDS.
         conn_tyep (str): Name of sql connection.
         DATABASE_NAME (str): Name of the database to be used.
 
