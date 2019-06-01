@@ -1,5 +1,5 @@
 ## Developer: Tian Fu
-## QA: Yueying(Sharon) Zhang
+#### QA: Yueying(Sharon) Zhang
 # Outline
 
 <!-- toc -->
@@ -79,43 +79,43 @@ Display of trends in customer retentions as the app is being used for a continuo
 ├── README.md                         <- You are here
 │
 ├── app 
-│   ├── models.py                     <- Creates the data model for the database connected to the Flask app 
 │   ├── __init__.py                   <- Initializes the Flask app and database connection
 │
 ├── config                            <- Directory for yaml configuration files for feature generation, model training, scoring, etc.
 │   ├── logging/                      <- Configuration files for python loggers
 │
-├── data                              <- Folder that contains data used or generated. Only the external/ and sample/ subdirectories are tracked by git. 
-│   ├── archive/                      <- Place to put archive data is no longer usabled. Not synced with git. 
-│   ├── external/                     <- External data sources, will be synced with git
-│   ├── sample/                       <- Sample data used for code development and testing, will be synced with git
+├── data                              <- Folder that contains data used or generated. Only the sample/ and database/ subdirectories are tracked by git. 
+│   ├── sample/                       <- External data used for code development and testing, will be synced with git
+│   ├── database/                     <- Database with initial customers used for app, will be synced with git
 │
 ├── docs                              <- A default Sphinx project; see sphinx-doc.org for details.
 │
 ├── figures                           <- Generated graphics and figures to be used in reporting.
 │
 ├── models                            <- Trained model objects (TMOs), model predictions, and model evaluations.
-│   ├── archive                       <- No longer current models. This directory is included in the .gitignore and is not tracked by git
 │
 ├── notebooks
 │   ├── develop                       <- Current notebooks being used in development.
 │   ├── deliver                       <- Notebooks shared with others. 
 │   ├── archive                       <- Develop notebooks no longer being used.
-│   ├── template.ipynb                <- Template notebook for analysis with useful imports and helper functions. 
+│   ├── template.ipynb                <- Template notebook for analysis with useful imports and helper functions.
 │
-├── src                               <- Source data for the project 
-│   ├── archive/                      <- No longer current scripts.
+├── src                               <- Source data for the project
 │   ├── helpers/                      <- Helper scripts used in main src files.
 │   ├── sql/                          <- SQL source code.
-│   ├── add_songs.py                  <- Script for creating a (temporary) MySQL database and adding songs to it.
-│   ├── import_data.py                <- Script for downloading raw data from github. 
-│   ├── generate_features.py          <- Script for cleaning and transforming data and generating features used for use in training and scoring.
+│   ├── import_data_github.py         <- Script for downloading raw data from github. 
+│   ├── import_data_s3.py             <- Script for downloading raw data from a public aws s3 bucket. 
+│   ├── upload_data.py                <- Script for uploading data files to S3 bucket. 
+│   ├── load_data.py                  <- Script for loading data files saved to desired location. 
+│   ├── generate_features.py          <- Script for cleaning and transforming data and generating features used for training and scoring.
 │   ├── train_model.py                <- Script for training a machine learning model.
 │   ├── score_model.py                <- Script for scoring new predictions using a trained model.
 │   ├── evaluate_model.py             <- Script for evaluating model performance.
+│   ├── models.py                     <- Creates the data model for the database connected to the Flask app.
 │   ├── README.md                     <- Documentation for midproject check instructions.
 │
 ├── test                              <- Files necessary for running model tests (see documentation below) 
+│   ├── test.py                       <- Script for running unit tests on functions in src/.
 │
 ├── static/                           <- CSS, JS files that remain static
 ├── templates/                        <- HTML (or other code) that is templated and changes based on a set of inputs
@@ -134,7 +134,7 @@ This project structure was partially influenced by the [Cookiecutter Data Scienc
 ## Running the application 
 ### 1. Set up environment 
 
-The `requirements.txt` file contains the packages required to run the model code. An environment can be set up in two ways. See bottom of README for exploratory data analysis environment setup. 
+The `requirements.txt` file contains the packages required to run the model code. An environment can be set up in two ways. 
 
 #### With `virtualenv`
 
@@ -154,7 +154,15 @@ pip install -r requirements.txt
 conda create -n pennylane python=3.7
 conda activate pennylane
 pip install -r requirements.txt
+(optional): to solve Command 'pip' not found: conda install pip then pip install -r requirements.txt
 
+```
+
+#### NOTE: To reproduce the whole model development process locally using Makefile, run following from command line in the main project repository:
+
+```bash
+export SQLALCHEMY_DATABASE_URI='sqlite:///data/database/churn_prediction.db'
+make all
 ```
 
 ### 2. Configure Flask app 
@@ -164,39 +172,46 @@ pip install -r requirements.txt
 ```python
 DEBUG = True  # Keep True for debugging, change to False when moving to production 
 LOGGING_CONFIG = "config/logging/local.conf"  # Path to file that configures Python logger
-PORT = 3002  # What port to expose app on 
-SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/tracks.db'  # URI for database that contains tracks
-
+SQLALCHEMY_DATABASE_URI # URL for database that contains bank customers
+PORT = 3002  # What port to expose app on - CHANGE TO 3000 if running on RDS
+HOST = "127.0.0.1" # Host IP for the app - CHANGE TO "0.0.0.0" if running on RDS
 ```
 
 
 ### 3. Initialize the database 
 
-To create the database in the location configured in `config.py` with one initial song, run: 
+To create a database in the local location configured in `config.py` with five initial customers, run: 
 
-`python run.py create --artist=<ARTIST> --title=<TITLE> --album=<ALBUM>`
+Note: an empty folder named database under <path_to_main_repository>/data has to be created to save the db.
 
-To add additional songs:
-
-`python run.py ingest --artist=<ARTIST> --title=<TITLE> --album=<ALBUM>`
+```bash
+cd path_to_repo/src
+python models.py
+```
 
 
 ### 4. Run the application 
- 
+To set up environment variable SQLALCHEMY_DATABASE_URI (URL for database that contains bank customers) from command line:
  ```bash
- python app.py 
+ Run locally: export SQLALCHEMY_DATABASE_URI='sqlite:///data/database/churn_prediction.db'
+ Run on RDS: export SQLALCHEMY_DATABASE_URI="{conn_type}://{user}:{password}@{host}:{port}/{DATABASE_NAME}"
+ ```
+
+ ```bash
+ cd path_to_repo
+ python app.py OR make app
  ```
 
 ### 5. Interact with the application 
 
-Go to [http://127.0.0.1:3000/]( http://127.0.0.1:3000/) to interact with the current version of hte app. 
+Go to [http://127.0.0.1:3002/]( http://127.0.0.1:3002/) to interact with the current version of the app locally. 
 
 ## Testing 
 
-Run `pytest` from the command line in the main project repository. 
+Run `make test` from the command line in the main project repository. 
 
 
-Tests exist in `test/test_helpers.py`
+Tests exist in `test/test.py`
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTQyOTcxNjUwNV19
 -->

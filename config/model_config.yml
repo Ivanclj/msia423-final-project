@@ -1,0 +1,56 @@
+model:
+  name: customer-churn-classification
+  author: Tian Fu
+  version: A1
+  description: a model that classifies customers into one of two types - churned and not churned
+  tags:
+    - classifier
+  dependencies: requirements.txt
+
+load_data:
+  how: load_s3
+  load_csv:
+    path_to_data: data/sample/Churn_Modelling.csv
+    columns: ['CreditScore', 'Geography', 'Gender', 'Age', 'Tenure', 'Balance', 'NumOfProducts',
+              'HasCrCard', 'IsActiveMember', 'EstimatedSalary', 'Exited']
+  load_s3:
+    sourceurl: https://nw-tianfu-project-data.s3.us-east-2.amazonaws.com/Churn_Modelling.csv
+    file_location: data/Churn_Modelling.csv
+    columns: ['CreditScore', 'Geography', 'Gender', 'Age', 'Tenure', 'Balance', 'NumOfProducts',
+              'HasCrCard', 'IsActiveMember', 'EstimatedSalary', 'Exited']
+  save_data: data/churn_data.csv
+
+generate_features:
+  choose_features:
+    features_to_use: ['CreditScore', 'Geography', 'Gender', 'Age', 'Tenure', 'Balance', 'NumOfProducts',
+                      'HasCrCard', 'IsActiveMember', 'EstimatedSalary']
+    target: Exited
+  to_dummy: ['Geography', 'Gender']
+  save_features: data/churn_processed.csv
+
+train_model:
+  method: xgboost
+  get_target:
+    target: Exited
+  split_data:
+    train_size: 0.7
+    test_size: 0.3
+    random_state: 42
+    save_split_prefix: data/churn
+  choose_features:
+    features_to_use: ['Age', 'Tenure', 'Balance', 'NumOfProducts', 'HasCrCard', 'IsActiveMember', 'Germany', 'Male']
+  max_depth: 3
+  n_estimators: 300
+  learning_rate: 0.05
+  save_tmo: models/churn-prediction.pkl
+
+score_model:
+  path_to_tmo: models/churn-prediction.pkl
+  threshold: 0.5
+  choose_features:
+    features_to_use: ['Age', 'Tenure', 'Balance', 'NumOfProducts', 'HasCrCard', 'IsActiveMember', 'Germany', 'Male']
+  save_scores: models/churn_test_scores.csv
+
+evaluate_model:
+  metrics: [auc, accuracy, f1_score]
+
