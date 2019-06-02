@@ -158,7 +158,9 @@ pip install -r requirements.txt
 
 ```
 
-#### NOTE: To reproduce the whole model development process locally using Makefile, run following from command line in the main project repository:
+### (Optional) Model Development Reproducibility
+
+To reproduce the whole model development process locally using Makefile, run following from command line in the main project repository:
 
 ```bash
 export SQLALCHEMY_DATABASE_URI='sqlite:///data/database/churn_prediction.db'
@@ -191,8 +193,9 @@ python models.py
 
 
 ### 4. Run the application 
-To set up environment variable SQLALCHEMY_DATABASE_URI (URL for database that contains bank customers) from command line:
+To set up environment variable SQLALCHEMY_DATABASE_URI (URL for database that contains bank customers) from command line in the main project repository:
  ```bash
+ cd path_to_repo
  Run locally: export SQLALCHEMY_DATABASE_URI='sqlite:///data/database/churn_prediction.db'
  Run on RDS: export SQLALCHEMY_DATABASE_URI="{conn_type}://{user}:{password}@{host}:{port}/{DATABASE_NAME}"
  ```
