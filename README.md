@@ -204,7 +204,7 @@ To set up environment variable SQLALCHEMY_DATABASE_URI (URL for database that co
 
  ```bash
  cd path_to_repo
- python app.py OR make app
+ python app.py
  ```
 
 ### 5. Interact with the application 
