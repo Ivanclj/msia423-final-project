@@ -92,8 +92,6 @@ Display of trends in customer retentions as the app is being used for a continuo
 │
 ├── docs                              <- A default Sphinx project; see sphinx-doc.org for details.
 │
-├── figures                           <- Generated graphics and figures to be used in reporting.
-│
 ├── models                            <- Trained model objects (TMOs), model predictions, and model evaluations.
 │
 ├── notebooks
