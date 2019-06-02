@@ -16,6 +16,7 @@
   * [2. Configure Flask app](#2-configure-flask-app)
   * [3. Initialize the database](#3-initialize-the-database)
   * [4. Run the application](#4-run-the-application)
+  * [5. Interact with the application](#5-interact-with-the-application)
 - [Testing](#testing)
 
 <!-- tocstop -->
