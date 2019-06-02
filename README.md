@@ -202,8 +202,8 @@ To set up environment variable SQLALCHEMY_DATABASE_URI (URL for database that co
  Run on RDS: export SQLALCHEMY_DATABASE_URI="{conn_type}://{user}:{password}@{host}:{port}/{DATABASE_NAME}"
  ```
 
+then
  ```bash
- cd path_to_repo
  python app.py
  ```
 
