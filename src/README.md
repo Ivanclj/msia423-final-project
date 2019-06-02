@@ -96,7 +96,7 @@ command to run:
 1) cd path_to_repo/src 
 2) python models.py -> this will create a db locally
 
-OR
+OR with MySQL configurations in the environment (ec2 for example)
 1) cd path_to_repo/src
 2) python models.py --RDS -> this will create a db on RDS
 ```
