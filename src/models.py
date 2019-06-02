@@ -69,13 +69,13 @@ def create_db(args,engine=None):
     """Creates a database with the data models inherited from `Base`.
 
     Args:
-        engine (:py:class:`sqlalchemy.engine.Engine`, default None): SQLAlchemy connection engine.
-            If None, `engine_string` must be provided.
-        engine_string (`str`, default None): String defining SQLAlchemy connection URI in the form of
+        engine (`str`, default None): String defining SQLAlchemy connection URI in the form of
             `dialect+driver://username:password@host:port/database`. If None, `engine` must be provided.
+        args: Parser arguments.
 
     Returns:
-        None
+        engine (:py:class:`sqlalchemy.engine.Engine`, default None): SQLAlchemy connection engine.
+        
     """
     if engine is None:
         if args.RDS:
