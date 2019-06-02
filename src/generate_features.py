@@ -46,6 +46,9 @@ def choose_features(df, features_to_use=None, target=None, **kwargs):
 
 def get_target(df, target, **kwargs):
     """Gets values of target labels of the dataframe."""
+    # raise KeyError when target is not a column of the dataset
+    if target not in df.columns:
+        raise KeyError('Not a valid column of this data!')
 
     y = df[target]
 

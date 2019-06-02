@@ -88,7 +88,7 @@ def split_data(X, y, train_size=1, test_size=0, random_state=42, save_split_pref
     return X, y
 
 
-def train_model(df, max_depth, n_estimators, learning_rate, method=None, save_tmo=None, **kwargs):
+def train_model(df, max_depth, n_estimators, learning_rate, random_state=None, method=None, save_tmo=None, **kwargs):
     """Function to train a specified model using features in given dataframe.
     Args:
         df (:py:class:`pandas.DataFrame`): DataFrame containing features.
@@ -97,6 +97,7 @@ def train_model(df, max_depth, n_estimators, learning_rate, method=None, save_tm
         max_depth (int): How deep a tree can be.
         n_estimators (int): Number of boosted trees.
         learning_rate (int): Determines the speed of learning process.
+        random_state (int): Random seed for reproducibility. Default to None.
         **kwargs: Should contain arguments for specific requirements of model.
     Returns:
         model ('sklearn.linear_model.logistic.LogisticRegression'): Logistic regression model trained.
@@ -124,8 +125,18 @@ def train_model(df, max_depth, n_estimators, learning_rate, method=None, save_tm
     # Splits the training data according to the "split_data" parameters. If this is an empty dictionary
     # (from prior step, because it is not in the configuration file), then the full dataset is returned (train_size=1)
     X, y = split_data(X, y, **kwargs["split_data"])
+
+    # checks data types of feature inputs - has to be numeric or boolean for xgboost model
+    for col in X["train"].columns:
+        if X["train"][col].dtype not in [np.dtype('float64'), np.dtype('float32'), np.dtype('int64'), np.dtype('bool')]:
+            raise ValueError('Input dataframe can only have numeric or boolean types!')
     
-    pre_defined_kwargs = {'max_depth':max_depth, 'n_estimators':n_estimators, "learning_rate":learning_rate}
+    if random_state is not None:
+        pre_defined_kwargs = {'max_depth':max_depth, 'n_estimators':n_estimators,
+                              "learning_rate":learning_rate, 'random_state':random_state}
+    else:
+        pre_defined_kwargs = {'max_depth':max_depth, 'n_estimators':n_estimators,
+                              "learning_rate":learning_rate}
     # Instantiates a model class for the training `method` provided
     model = methods[method](**pre_defined_kwargs)
 

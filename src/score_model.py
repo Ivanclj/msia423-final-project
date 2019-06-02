@@ -9,6 +9,7 @@ import datetime
 import pickle
 
 import sklearn
+from sklearn.exceptions import NotFittedError
 import pandas as pd
 import numpy as np
 
@@ -35,13 +36,26 @@ def score_model(df, path_to_tmo, threshold, save_scores=None, **kwargs):
     with open(path_to_tmo, "rb") as f:
         model = pickle.load(f)
 
+    # check model type - has to be xgboost
+    if str(type(model)) != "<class 'xgboost.sklearn.XGBClassifier'>":
+        raise TypeError("model used to score must be an XGBoost Classifier")
+
     if "choose_features" in kwargs:
         X = choose_features(df, **kwargs["choose_features"])
     else:
         X = df
+    
+    # check if input dataframe for scoring has only numeric or boolean columns
+    for col in X.columns:
+        if X[col].dtype not in [np.dtype('float64'), np.dtype('float32'), np.dtype('int64'), np.dtype('bool')]:
+            raise ValueError('Input dataframe can only have numeric or boolean types!')
 
-    # get probability of churn
-    y_pred_prob = model.predict_proba(X)[:,1]
+    # check if the model loaded has been fitted or not in order to proceed to prediction stage
+    try:
+        # get probability of churn
+        y_pred_prob = model.predict_proba(X)[:,1]
+    except:
+        raise NotFittedError('Model needs to be fitted before making predictions!')
     y_predicted = pd.DataFrame(y_pred_prob)
     y_predicted.columns = ['pred_prob']
     

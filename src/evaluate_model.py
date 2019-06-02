@@ -23,11 +23,32 @@ def evaluate_model(label_df, y_predicted, **kwargs):
     Returns: 
         confusion_df (:py:class:`pandas.DataFrame`): Dataframe reporting confusion matrix
     """
-    # get predicted scores
-    y_pred_prob = y_predicted.iloc[:,0]
-    y_pred = y_predicted.iloc[:,1]
-    # get true labels
-    y_true = label_df.iloc[:,0]
+    try:
+        # get predicted scores
+        y_pred_prob = y_predicted.iloc[:,0]
+        y_pred = y_predicted.iloc[:,1]
+        # get true labels
+        y_true = label_df.iloc[:,0]
+    # raise IndexError when the input dataframe does not have two columns as desired
+    except:
+        raise IndexError('Index out of bounds!')
+    
+    # check if label_df and y_predicted have only numeric columns
+    for col in label_df.columns:
+        if label_df[col].dtype not in [np.dtype('float64'), np.dtype('float32'), np.dtype('int64')]:
+            raise ValueError('Input dataframe can only have numeric or boolean types!')
+    for col in y_predicted.columns:
+        if y_predicted[col].dtype not in [np.dtype('float64'), np.dtype('float32'), np.dtype('int64')]:
+            raise ValueError('Input dataframe can only have numeric or boolean types!')
+
+    # classification metrics can only take binary classes - 0 or 1 in this case
+    # check if y_pred and label_df are all either 0 or 1
+    if (not y_pred.isin([0,1]).all()) or (not y_true.isin([0,1]).all()):
+        raise ValueError('Class can only be 0 or 1!')
+
+    # check if predicted probabilities are within 0-1
+    if not y_pred_prob.between(0,1,inclusive=True).all():
+        raise ValueError('Probabilities needs to be in 0-1 range!')
 
     # calculate auc and accuracy and f1_score if specified
     if "auc" in kwargs["metrics"]:

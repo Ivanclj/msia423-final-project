@@ -42,6 +42,7 @@ train_model:
   max_depth: 3
   n_estimators: 300
   learning_rate: 0.05
+  random_state: 42
   save_tmo: models/churn-prediction.pkl
 
 score_model:
