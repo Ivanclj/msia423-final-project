@@ -8,6 +8,7 @@
 - [Project Planning](#project-planning)
 - [Repo structure](#repo-structure)
 - [Documentation](#documentation)
+- [Instructions on getting data and database](#instructions-on-getting-data-and-database-ready)
 - [Running the application](#running-the-application)
   * [1. Set up environment](#1-set-up-environment)
     + [With `virtualenv` and `pip`](#with-virtualenv)
@@ -130,6 +131,11 @@ This project structure was partially influenced by the [Cookiecutter Data Scienc
  
 * Open up `docs/build/html/index.html` to see Sphinx documentation docs. 
 * See `docs/README.md` for keeping docs up to date with additions to the repository.
+
+## Instructions on getting data and database ready
+
+* See `src/README.md` for detailed guidelines to run scripts for retrieving project data and setting database
+
 
 ## Running the application 
 ### 1. Set up environment 
