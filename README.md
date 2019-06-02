@@ -114,7 +114,7 @@ Display of trends in customer retentions as the app is being used for a continuo
 │   ├── score_model.py                <- Script for scoring new predictions using a trained model.
 │   ├── evaluate_model.py             <- Script for evaluating model performance.
 │   ├── models.py                     <- Creates the data model for the database connected to the Flask app.
-│   ├── README.md                     <- Documentation for midproject check instructions.
+│   ├── README.md                     <- Documentation with instructions to run scripts in src/ and midproject check.
 │
 ├── test                              <- Files necessary for running model tests (see documentation below) 
 │   ├── test.py                       <- Script for running unit tests on functions in src/.
