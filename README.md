@@ -140,7 +140,7 @@ This project structure was partially influenced by the [Cookiecutter Data Scienc
 ## Running the application 
 ### 1. Set up environment 
 
-The `requirements.txt` file contains the packages required to run the model code. An environment can be set up in two ways. 
+The `requirements.txt` file contains the packages required to run the model code. An environment can be set up in two ways. First, `cd path_to_repo`
 
 #### With `virtualenv`
 
