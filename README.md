@@ -99,7 +99,6 @@ Display of trends in customer retentions as the app is being used for a continuo
 │   ├── develop                       <- Current notebooks being used in development.
 │   ├── deliver                       <- Notebooks shared with others. 
 │   ├── archive                       <- Develop notebooks no longer being used.
-│   ├── template.ipynb                <- Template notebook for analysis with useful imports and helper functions.
 │
 ├── src                               <- Source data for the project
 │   ├── helpers/                      <- Helper scripts used in main src files.
