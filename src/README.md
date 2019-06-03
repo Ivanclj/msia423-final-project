@@ -6,13 +6,13 @@ upload_data.py, import_data_github.py, import_data_s3.py, models.py
 
 Makefile: for convenient execution
 
-Note: Please clone or download this repo before proceeding. upload_data.py needs to be run in AWS so please clone this repo to the AWS environment, and cd <path_to_repo>
+Note: Please clone or download this repo before proceeding. upload_data.py needs to be run in AWS so please clone this repo to the AWS environment, and `cd path_to_repo`
 
 #### Setup Environment with `conda`
 
 ```bash
-conda create -n pennylane python=3.7
-conda activate pennylane
+conda create -n tibank python=3.7
+conda activate tibank
 pip install -r requirements.txt
 
 ```
@@ -100,4 +100,4 @@ OR with MySQL configurations in the environment (ec2 for example)
 1) cd path_to_repo/src
 2) python models.py --RDS -> this will create a db on RDS
 ```
-Note: check if table is created successfully in logfile
+Note: check if table is created successfully in logfile_db.log
