@@ -221,6 +221,11 @@ Run `make test` from the command line in the main project repository.
 
 
 Tests exist in `test/test.py`
+
+#### Citation
+
+General HTML Templates, CSS, js credit to Colorlib https://colorlib.com/wp/template/ (Woodrox, Dup, Maxitechture) and W3Schools https://www.w3schools.com/howto/ (buttons, styles, error page)
+
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTQyOTcxNjUwNV19
 -->
