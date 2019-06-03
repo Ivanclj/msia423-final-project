@@ -1,2 +1,4 @@
 
 data/Churn_Modelling.csv
+models/churn_test_scores.csv
+models/model_evaluation.csv
