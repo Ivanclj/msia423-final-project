@@ -157,8 +157,8 @@ pip install -r requirements.txt
 #### With `conda`
 
 ```bash
-conda create -n pennylane python=3.7
-conda activate pennylane
+conda create -n tibank python=3.7
+conda activate tibank
 pip install -r requirements.txt
 (optional): to solve Command 'pip' not found: conda install pip then pip install -r requirements.txt
 
