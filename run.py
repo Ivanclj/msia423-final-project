@@ -9,7 +9,7 @@ from app import app
 
 # Define LOGGING_CONFIG in config.py - path to config file for setting up the logger (e.g. config/logging/local.conf)
 logging.config.fileConfig(app.config["LOGGING_CONFIG"])
-logger = logging.getLogger("run-churn-predictor")
+logger = logging.getLogger("churn-predictor")
 logger.debug('Test log')
 
 from src.load_data import run_loading

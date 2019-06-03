@@ -20,7 +20,7 @@ app.config.from_object('config')
 # Define LOGGING_CONFIG in config.py - path to config file for setting
 # up the logger (e.g. config/logging/local.conf)
 logging.config.fileConfig(app.config["LOGGING_CONFIG"])
-logger = logging.getLogger("penny-lane")
+logger = logging.getLogger("churn-predictor")
 logger.debug('Test log')
 
 # Initialize the database
