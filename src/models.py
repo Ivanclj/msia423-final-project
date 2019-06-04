@@ -28,7 +28,6 @@ class Churn_Prediction(Base):
     """Create a data model for the database to be set up for capturing customers """
     __tablename__ = 'churn_prediction'
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
-    #ip = Column(String(20),nullable=True)
     age = Column(Integer, unique=False, nullable=False)
     activeMember = Column(Integer, unique=False, nullable=False)
     numProducts = Column(Integer, unique=False, nullable=False)
