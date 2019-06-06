@@ -219,7 +219,7 @@ Please add the following line at the very beginning of `app.py`:
 #!/usr/bin/env python
 ```
 
-### 5. Interact with the application :dance:
+### 5. Interact with the application
 
 Go to [http://127.0.0.1:3002/]( http://127.0.0.1:3002/) to interact with the current version of the app locally. 
 
@@ -235,6 +235,5 @@ Tests exist in `test/test.py`
 General HTML Templates, CSS, js credit to Colorlib https://colorlib.com/wp/template/ (Woodrox, Dup, Maxitechture) and W3Schools https://www.w3schools.com/howto/ (buttons, styles, error page)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwMTYwNjkxMiwtMzkwNjAyODkyLDE0Mj
-k3MTY1MDVdfQ==
+eyJoaXN0b3J5IjpbLTMwNTQ0NjcxXX0=
 -->
