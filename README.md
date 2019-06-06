@@ -210,8 +210,11 @@ then
  python app.py
  ```
 
-:bulb: Tips:
+:bulb: Tip:
 When encountering the following error:
+
+    OSError: [Errno 8] Exec format error
+Please add the following line at the very beginning of `app.py`:
 
     enter code here
 
@@ -231,6 +234,6 @@ Tests exist in `test/test.py`
 General HTML Templates, CSS, js credit to Colorlib https://colorlib.com/wp/template/ (Woodrox, Dup, Maxitechture) and W3Schools https://www.w3schools.com/howto/ (buttons, styles, error page)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4OTMzOTU5LC0zOTA2MDI4OTIsMTQyOT
-cxNjUwNV19
+eyJoaXN0b3J5IjpbMTM1Nzg3OTQwOSwtMzkwNjAyODkyLDE0Mj
+k3MTY1MDVdfQ==
 -->
