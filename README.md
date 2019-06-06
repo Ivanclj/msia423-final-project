@@ -210,6 +210,8 @@ then
  python app.py
  ```
 
+
+
 ### 5. Interact with the application 
 
 Go to [http://127.0.0.1:3002/]( http://127.0.0.1:3002/) to interact with the current version of the app locally. 
@@ -226,5 +228,5 @@ Tests exist in `test/test.py`
 General HTML Templates, CSS, js credit to Colorlib https://colorlib.com/wp/template/ (Woodrox, Dup, Maxitechture) and W3Schools https://www.w3schools.com/howto/ (buttons, styles, error page)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwOTQ2NTczMjgsMTQyOTcxNjUwNV19
+eyJoaXN0b3J5IjpbLTM5MDYwMjg5MiwxNDI5NzE2NTA1XX0=
 -->
