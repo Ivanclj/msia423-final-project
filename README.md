@@ -210,7 +210,10 @@ then
  python app.py
  ```
 
+:bulb: Tips:
+When encountering the following error:
 
+    enter code here
 
 ### 5. Interact with the application 
 
@@ -228,5 +231,6 @@ Tests exist in `test/test.py`
 General HTML Templates, CSS, js credit to Colorlib https://colorlib.com/wp/template/ (Woodrox, Dup, Maxitechture) and W3Schools https://www.w3schools.com/howto/ (buttons, styles, error page)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MDYwMjg5MiwxNDI5NzE2NTA1XX0=
+eyJoaXN0b3J5IjpbLTg4OTMzOTU5LC0zOTA2MDI4OTIsMTQyOT
+cxNjUwNV19
 -->
