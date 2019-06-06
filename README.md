@@ -13,7 +13,7 @@
   * [1. Set up environment](#1-set-up-environment)
     + [With `virtualenv` and `pip`](#with-virtualenv)
     + [With `conda`](#with-conda)
-  * [Model Development Reproducibility](#optional-model-development-reproducibility)
+  * [Reproduce Model Development](#optional-reproduce-model-development)
   * [2. Configure Flask app](#2-configure-flask-app)
   * [3. Initialize the database](#3-initialize-the-database)
   * [4. Run the application](#4-run-the-application)
@@ -163,7 +163,7 @@ pip install -r requirements.txt
 
 ```
 
-### (Optional) Model Development Reproducibility
+### (Optional) Reproduce Model Development
 
 To reproduce the whole model development process locally using Makefile, run following from command line in the main project repository:
 
