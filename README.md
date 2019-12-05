@@ -1,5 +1,4 @@
-## Developer: Tian Fu
-#### QA: Yueying(Sharon) Zhang
+## Developer: Lingjun Chen
 # Outline
 
 <!-- toc -->
